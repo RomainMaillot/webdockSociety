@@ -149,7 +149,7 @@
     position: relative;
     background: #FFFFFF50;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: all 0.3s;
 }
 
 .menu__card.active
@@ -176,5 +176,18 @@
 .menu__card .menu__card__content .btn--main
 {
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 1s;
+    position: absolute;
+}
+
+.menu__card .menu__card__content p
+{
+    width: 40%;
+    top: 45%;
+    left: 5%;
+}
+
+.menu__card .menu__card__content .btn--main
+{
+    top: 60%;
 }

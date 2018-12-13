@@ -81,6 +81,12 @@ class Menu
                 'click',
                 () =>
                 {
+                    if(this.$container.querySelector('.active'))
+                    {
+                        const $card = this.$container.querySelector('.active')
+                        this.setCardWidth(this.cards.width,$card)
+                        $card.classList.remove('active')
+                    }
                     $card.classList.add('active')
                     this.setCardWidth(this.cards.width*2,$card)
                 }
