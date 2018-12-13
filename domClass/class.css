@@ -53,7 +53,7 @@
     position: absolute;
     left: -1px;
     top: -1px;
-    background: #FFFFFF90;
+    background: #FFFFFF;
     width: 100%;
     height: 1px;
     transition: transform 0.3s;
@@ -73,7 +73,7 @@
     position: absolute;
     left: -1px;
     top: -1px;
-    background: #FFFFFF90;
+    background: #FFFFFF;
     width: 1px;
     height: 100%;
     transition: transform 0.3s;
@@ -93,7 +93,7 @@
     position: absolute;
     right: -1px;
     bottom: -1px;
-    background: #FFFFFF90;
+    background: #FFFFFF;
     width: 100%;
     height: 1px;
     transition: transform 0.3s;
@@ -113,7 +113,7 @@
     position: absolute;
     right: -1px;
     bottom: -1px;
-    background: #FFFFFF90;
+    background: #FFFFFF;
     width: 1px;
     height: 100%;
     transition: transform 0.3s;
@@ -147,13 +147,42 @@
 {
     height: 100%;
     position: relative;
-    background: #FFFFFF50;
     cursor: pointer;
     transition: all 0.3s;
+    overflow: hidden;
 }
 
-.menu__card.active
+.menu__card__background
 {
+    position: absolute;
+    left: -50%;
+    top: 0;
+    height: 100%;
+}
+
+.menu__card::before
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #412057;
+    opacity: 0.28;
+    z-index: 1;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+
+.menu__card__content
+{
+    position: relative;
+    height: 100%;
+    z-index: 1;
+}
+
+.menu__card.active::before
+{
+    opacity: 0;
 }
 
 .menu__card.active .menu__card__content p,
@@ -190,4 +219,12 @@
 .menu__card .menu__card__content .btn--main
 {
     top: 60%;
+}
+
+.menu__card .menu__card__content .frontImage
+{
+    position: absolute;
+    right: -320px;
+    height: 100%;
+    z-index: -1;
 }
