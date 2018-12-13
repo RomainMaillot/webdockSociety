@@ -53,6 +53,7 @@ class Menu
         this.$container = $container
 
         this.setCards()
+        this.setActive()
     }
 
     setCards()
@@ -61,14 +62,29 @@ class Menu
         this.cards.$items = this.$container.querySelectorAll('.menu__card')
         this.cards.width = 100 / this.cards.$items.length
 
-        this.setCardsWidth(this.cards.width)
+        for(const $card of this.cards.$items)
+        {
+            this.setCardWidth(this.cards.width,$card)
+        }
     }
 
-    setCardsWidth(width)
+    setCardWidth(width,element)
+    {
+        element.style.width = `${width}%`
+    }
+
+    setActive()
     {
         for(const $card of this.cards.$items)
         {
-            $card.style.width = `${width}%`
+            $card.addEventListener(
+                'click',
+                () =>
+                {
+                    $card.classList.add('active')
+                    this.setCardWidth(this.cards.width*2,$card)
+                }
+            )
         }
     }
 }

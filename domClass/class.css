@@ -149,18 +149,32 @@
     position: relative;
     background: #FFFFFF50;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.menu__card.active
+{
+}
+
+.menu__card.active .menu__card__content p,
+.menu__card.active .menu__card__content .btn--main
+{
+    opacity: 1;
 }
 
 .menu__card .menu__card__content h2
 {
     position: absolute;
     left: 5%;
-    font-size: 6rem;
+    top: 30%;
+    font-size: 4rem;
     color: #FFFFFF;
+    text-transform: uppercase;
 }
 
 .menu__card .menu__card__content p,
 .menu__card .menu__card__content .btn--main
 {
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
