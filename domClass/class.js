@@ -45,3 +45,30 @@ class Button
         $container.appendChild(this.bottomRightLine)
     }
 }
+
+class Menu
+{
+    constructor($container)
+    {
+        this.$container = $container
+
+        this.setCards()
+    }
+
+    setCards()
+    {
+        this.cards = {}
+        this.cards.$items = this.$container.querySelectorAll('.menu__card')
+        this.cards.width = 100 / this.cards.$items.length
+
+        this.setCardsWidth(this.cards.width)
+    }
+
+    setCardsWidth(width)
+    {
+        for(const $card of this.cards.$items)
+        {
+            $card.style.width = `${width}%`
+        }
+    }
+}
