@@ -3,12 +3,12 @@ class Button
     constructor($container)
     {
         this.$container = $container
-        this.text = "C'est parti"
+        this.text = this.$container.dataset.text
 
-        this.createVisual()
+        this.createBackground()
     }
 
-    createVisual()
+    createBackground()
     {
         // Create dom element back border
         this.backBorder = document.createElement('span')
@@ -25,5 +25,23 @@ class Button
         this.frontBorder = document.createElement('span')
         this.frontBorder.classList.add('btn--border', 'border--front')
         this.$container.appendChild(this.frontBorder)
+
+        // Create lines
+        this.addBackgroundLine(this.backBorder)
+        this.addBackgroundLine(this.textMiddle)
+        this.addBackgroundLine(this.frontBorder)
+    }
+    
+    addBackgroundLine($container)
+    {
+        // Adding top left lines
+        this.topLeftLine = document.createElement('span')
+        this.topLeftLine.classList.add('btn--line', 'top--left')
+        $container.appendChild(this.topLeftLine)
+
+        // Adding bottom right lines
+        this.bottomRightLine = document.createElement('span')
+        this.bottomRightLine.classList.add('btn--line', 'bottom--right')
+        $container.appendChild(this.bottomRightLine)
     }
 }

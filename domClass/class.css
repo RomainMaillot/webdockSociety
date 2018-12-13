@@ -1,3 +1,5 @@
+/* Class button */
+
 .btn--border
 {
     border: solid 1px #00000060;
@@ -7,16 +9,36 @@
     height: 100%;
 }
 
+.btn--line
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.btn--line.top--left
+{
+    left: 0;
+    top: 0;
+}
+
+.btn--line.bottom--right
+{
+    right: 0;
+    bottom: 0;
+}
+
 .btn--border.border--back
 {
     transform: translateX(2%) translateY(10%);
 }
-.btn--main:hover .btn--border::after
+
+.btn--main:hover .top--left::after
 {
     transform: scaleX(1);
 }
 
-.btn--border::after
+.top--left::after
 {
     content: "";
     position: absolute;
@@ -30,12 +52,12 @@
     transform: scaleX(0);
 }
 
-.btn--main:hover .btn--border::before
+.btn--main:hover .top--left::before
 {
     transform: scaleY(1);
 }
 
-.btn--border::before
+.top--left::before
 {
     content: "";
     position: absolute;
@@ -46,6 +68,44 @@
     height: 100%;
     transition: transform 0.3s;
     transform-origin: top;
+    transform: scaleY(0);
+}
+
+.btn--main:hover .bottom--right::after
+{
+    transform: scaleX(1);
+}
+
+.bottom--right::after
+{
+    content: "";
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    background: black;
+    width: 100%;
+    height: 1px;
+    transition: transform 0.3s;
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+.btn--main:hover .bottom--right::before
+{
+    transform: scaleY(1);
+}
+
+.bottom--right::before
+{
+    content: "";
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    background: black;
+    width: 1px;
+    height: 100%;
+    transition: transform 0.3s;
+    transform-origin: bottom;
     transform: scaleY(0);
 }
 
