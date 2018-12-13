@@ -1,0 +1,60 @@
+.btn--border
+{
+    border: solid 1px #00000060;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.btn--border.border--back
+{
+    transform: translateX(2%) translateY(10%);
+}
+.btn--main:hover .btn--border::after
+{
+    transform: scaleX(1);
+}
+
+.btn--border::after
+{
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    background: black;
+    width: 100%;
+    height: 1px;
+    transition: transform 0.3s;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+.btn--main:hover .btn--border::before
+{
+    transform: scaleY(1);
+}
+
+.btn--border::before
+{
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    background: black;
+    width: 1px;
+    height: 100%;
+    transition: transform 0.3s;
+    transform-origin: top;
+    transform: scaleY(0);
+}
+
+.btn--border.border--front
+{
+    transform: translateX(-2%) translateY(-10%);
+}
+
+.btn--border.btn--content
+{
+    text-align: center;
+}

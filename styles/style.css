@@ -1,0 +1,17 @@
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.btn--main
+{
+    position: relative;
+    margin: 50px auto;
+    text-align: center;
+    height: 20px;
+    width: 200px;
+    cursor: pointer;
+}
