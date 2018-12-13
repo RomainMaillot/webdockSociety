@@ -168,7 +168,7 @@
     height: 100%;
     background: #412057;
     opacity: 0.28;
-    z-index: 1;
+    z-index: 2;
     transition: opacity 0.3s;
     will-change: opacity;
 }
@@ -183,6 +183,7 @@
 .menu__card.active::before
 {
     opacity: 0;
+    z-index: 1;
 }
 
 .menu__card.active .menu__card__content p,
@@ -225,6 +226,7 @@
 {
     position: absolute;
     right: -320px;
+    bottom: -40px;
     height: 100%;
     z-index: -1;
 }

@@ -93,6 +93,8 @@ class Menu
                     }
                     $card.classList.add('active')
                     this.setCardWidth(this.cards.width*2,$card)
+                    this.$parallaxe = $card.querySelector('.frontImage')
+                    this.mouseParallaxe()
                 }
             )
         }
@@ -100,11 +102,13 @@ class Menu
 
     mouseParallaxe()
     {
-        this.$container.addEventListener(
+        window.addEventListener(
             'mousemove',
             (_event) =>
             {
-                
+                const ratioX = _event.clientX / this.cards.width
+                const ratioY = _event.clientY / this.cards.width
+                this.$parallaxe.style.transform = `translateX(${-ratioX}px) translateY(${-ratioY}px)`
             }
         )
     }
