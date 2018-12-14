@@ -186,13 +186,24 @@
     z-index: 1;
 }
 
-.menu__card.active .menu__card__content p,
+.menu__card.incoming::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000080;
+    z-index: 2;
+}
+
+.menu__card.active .menu__card__content .card__text,
 .menu__card.active .menu__card__content .btn--main
 {
     opacity: 1;
 }
 
-.menu__card .menu__card__content h2
+.menu__card .menu__card__content .card__title
 {
     position: absolute;
     left: 5%;
@@ -202,7 +213,7 @@
     text-transform: uppercase;
 }
 
-.menu__card .menu__card__content p,
+.menu__card .menu__card__content .card__text,
 .menu__card .menu__card__content .btn--main
 {
     opacity: 0;
@@ -210,7 +221,7 @@
     position: absolute;
 }
 
-.menu__card .menu__card__content p
+.menu__card .menu__card__content .card__text
 {
     width: 40%;
     top: 45%;

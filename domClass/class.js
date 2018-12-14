@@ -91,6 +91,10 @@ class Menu
                         this.setCardWidth(this.cards.width,$card)
                         $card.classList.remove('active')
                     }
+                    if($card.dataset.incoming)
+                    {
+                        $card.classList.add('incoming')
+                    }
                     $card.classList.add('active')
                     this.setCardWidth(this.cards.width*2,$card)
                     this.$parallaxe = $card.querySelector('.frontImage')
@@ -106,8 +110,8 @@ class Menu
             'mousemove',
             (_event) =>
             {
-                const ratioX = _event.clientX / this.cards.width
-                const ratioY = _event.clientY / this.cards.width
+                const ratioX = _event.clientX / this.cards.width / 3
+                const ratioY = _event.clientY / this.cards.width / 3
                 this.$parallaxe.style.transform = `translateX(${-ratioX}px) translateY(${-ratioY}px)`
             }
         )
