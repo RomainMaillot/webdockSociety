@@ -12,23 +12,46 @@ body
     color: white;
 }
 
-nav img
+nav
 {
-    width: 5.5%;
-    display: inline;
-    float: left;
-    /*height: 6%;*/
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100px;
+}
+
+nav ul.topnav
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav ul.topnav li
+{
+    list-style: none;
+}
+
+nav ul.topnav li a
+{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul.topnav li a img
+{
+    width: 6%;
 }
 
 .sentences
 {
-    margin-top: -5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
+    background-color: #41205730;
 }
 
 .sentences .btn--main
