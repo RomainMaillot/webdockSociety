@@ -2,7 +2,6 @@
 .btn--main
 {
     position: relative;
-    text-align: center;
     cursor: pointer;
     color: #FFFFFF;
     height: 20px;
@@ -231,6 +230,7 @@
 .menu__card .menu__card__content .btn--main
 {
     top: 60%;
+    text-align: center;
 }
 
 .menu__card .menu__card__content .frontImage
