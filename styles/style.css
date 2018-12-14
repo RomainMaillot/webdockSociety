@@ -59,7 +59,7 @@
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     font-size: 1rem;
-    width: 90%;
+    width: 92%;
 }
 
 .quotation
@@ -80,13 +80,47 @@
     font-family: "Bodoni";
     font-style: italic;
     font-size: 1.3rem;
-    width: 85%;
+    width: 88%;
 }
 
-.about__img
+.end
 {
-    width: 200px;
-    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.end__img
+{
+    width: 100px;
+    height: 100px;
+    align-self: center;
+}
+
+.end__page__subtitle
+{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.end__page__text
+{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1rem; 
+}
+
+.end__page
+{
+    width: 65%;
+}
+
+.footer-logos__img
+{
+    width: 25px;
+    height: 25px;
 }
 
 @font-face
