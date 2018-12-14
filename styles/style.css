@@ -1,0 +1,104 @@
+.container
+{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 200px;
+}
+
+.about
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+}
+
+.about .about__inner
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 100%;
+    padding: 20px 60px;
+    background: #251826;
+    opacity: 0.95;
+    color: #FFFFFF;
+    transform: translateX(0%);
+    transition-property: transform;
+    transition-duration: 1s;
+    will-change: transform;
+    overflow: scroll;
+}
+
+.about.open .about__inner
+{
+    transform: translateX(-100%);
+}
+
+.about__title
+{
+    font-family: "Bodoni";
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.about__subtitle
+{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-top: 45px;
+    width: 75%;
+}
+
+.about__text
+{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    width: 90%;
+}
+
+.quotation
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.quotation__sign
+{
+    margin: 0;
+    font-size: 90px;
+}
+
+.quotation .quotation__text
+{
+    font-family: "Bodoni";
+    font-style: italic;
+    font-size: 1.3rem;
+    width: 85%;
+}
+
+.about__img
+{
+    width: 200px;
+    height: 200px;
+}
+
+@font-face
+{
+    font-family: "Bodoni";
+    font-weight: bold;
+    src: url('../fonts/BodoniFLF-Bold.ttf')
+}
+
+@font-face
+{
+    font-family: "Bodoni";
+    font-style: italic;
+    src: url('../fonts/BodoniFLF-BoldItalic.ttf')
+}
