@@ -117,6 +117,19 @@
     width: 65%;
 }
 
+.footer-logos
+{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    margin-right: 80px;
+}
+
+.footer-logos .footer-logos__img +.footer-logos__img
+{
+    margin-left: 25px;
+}
+
 .footer-logos__img
 {
     width: 25px;
