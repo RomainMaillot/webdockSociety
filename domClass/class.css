@@ -185,13 +185,23 @@
     z-index: 1;
 }
 
-.menu__card.active .menu__card__content p,
-.menu__card.active .menu__card__content .btn--main
+.menu__card.incoming::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000080;
+    z-index: 2;
+}
+
+.menu__card.active .menu__card__content .card__content__inner
 {
     opacity: 1;
 }
 
-.menu__card .menu__card__content h2
+.menu__card .menu__card__content .card__title
 {
     position: absolute;
     left: 5%;
@@ -201,31 +211,22 @@
     text-transform: uppercase;
 }
 
-.menu__card .menu__card__content p,
-.menu__card .menu__card__content .btn--main
+.menu__card .menu__card__content .card__content__inner
 {
-    opacity: 0;
-    transition: opacity 1s;
     position: absolute;
-}
-
-.menu__card .menu__card__content p
-{
     width: 40%;
     top: 45%;
     left: 5%;
-}
-
-.menu__card .menu__card__content .btn--main
-{
-    top: 60%;
+    opacity: 0;
+    transition: opacity 1s;
+    will-change: opacity;
 }
 
 .menu__card .menu__card__content .frontImage
 {
     position: absolute;
-    right: -320px;
-    bottom: -40px;
-    height: 100%;
+    right: 0;
+    bottom: -10%;
+    height: 90%;
     z-index: -1;
 }
