@@ -1,3 +1,8 @@
+/* 
+Creation of class button
+exemple of html :
+    <div class="btn--main js-button" data-text="ICI"></div>
+*/
 class Button
 {
     constructor($container)
@@ -45,7 +50,20 @@ class Button
         $container.appendChild(this.bottomRightLine)
     }
 }
-
+/* 
+Creation of class menu
+exemple of html :
+    <div class="menu__card" data-background="images/background_roms.png">
+        <div class="menu__card__content">
+            <h2 class="card__title">les roms</h2>
+            <div class="card__content__inner">
+                <p class="card__text">Déconstruisons ensemble l’entièreté des préjugés autour de cette communauté dont la richesse culturelle doit perdurer…</p>
+                <div class="btn--main js-button" data-text="ICI"></div>
+            </div>
+            <img class="frontImage" src="images/roms.png" alt="">
+        </div>
+    </div>
+*/
 class Menu
 {
     constructor($container)
