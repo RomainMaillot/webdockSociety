@@ -3,13 +3,18 @@ body
 {
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.container
+{
     overflow: hidden;
     background-image: url("../images/bg.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
     width: 100vw;
-    color: white;
+    color: white;  
 }
 
 nav
@@ -32,6 +37,16 @@ nav ul.topnav li
     list-style: none;
 }
 
+nav ul.topnav li.right
+{
+    width: 10%;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    align-self: center;
+    padding-right: 2%;
+    font-weight: bold;
+}
+
 nav ul.topnav li a
 {
     text-decoration: none;
@@ -40,7 +55,7 @@ nav ul.topnav li a
 
 nav ul.topnav li a img
 {
-    width: 6%;
+    height: 100px;
 }
 
 .sentences
@@ -51,7 +66,7 @@ nav ul.topnav li a img
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: #41205730;
+    background-color: #41205750;
 }
 
 .sentences .btn--main
