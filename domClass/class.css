@@ -236,8 +236,8 @@
 .menu__card .menu__card__content .frontImage
 {
     position: absolute;
-    right: -320px;
-    bottom: -40px;
-    height: 100%;
+    right: 0;
+    bottom: -10%;
+    height: 90%;
     z-index: -1;
 }
