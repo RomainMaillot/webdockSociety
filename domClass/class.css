@@ -219,7 +219,7 @@
 .menu__card .menu__card__content .frontImage
 {
     position: absolute;
-    right: 0;
+    right: -5%;
     bottom: -10%;
     height: 90%;
     z-index: -1;

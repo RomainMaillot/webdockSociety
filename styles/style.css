@@ -17,6 +17,12 @@ body
     color: white;  
 }
 
+.btn--main
+{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 span.strong
 {
     font-weight: bold;
