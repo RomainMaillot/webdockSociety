@@ -87,10 +87,7 @@ class Menu
         for(const $card of this.cards.$items)
         {
             this.setCardWidth(this.cards.width,$card)
-            const cardBackground = document.createElement('img')
-            cardBackground.src = $card.dataset.background
-            cardBackground.classList.add('menu__card__background')
-            $card.appendChild(cardBackground)
+            $card.style.backgroundImage = `url('${$card.dataset.background}')`
         }
     }
 
