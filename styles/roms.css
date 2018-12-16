@@ -1,0 +1,72 @@
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+/* HEADER */
+
+.page.page1,
+.page.page2
+{
+    background: url('../images/background_page_roms.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.page.page3
+{
+    background: url('../images/carte_roms.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.page .content
+{
+    background: #3E1E5380;
+}
+
+.page__header
+{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    width: 100%;
+}
+
+.page__header .page__title
+{
+    margin: 0 auto;
+    font-size: 3rem;
+    align-self: center;
+    text-transform: uppercase;
+}
+
+.page__header a img
+{
+    height: 100px;
+}
+
+/* MAIN */
+
+.page__main
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+.page__main .page__text
+{
+    font-size: 2.5rem;
+    width: 50%;
+    text-align: center;
+    align-self: center;
+}
