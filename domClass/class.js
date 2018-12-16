@@ -155,3 +155,123 @@ class ButtonClose
         )
     }
 }
+/* Creation of the class Pages */
+class Pages
+{
+    constructor($container)
+    {
+        this.$container = $container
+        
+        this.setPages()
+        this.setSiblings()
+
+        this.gotTo(0)
+    }
+
+    setPages()
+    {
+        this.pages = {}
+        this.pages.index = 0
+        this.pages.$items = this.$container.querySelectorAll('.page')
+    }
+
+    setSiblings()
+    {
+        this.siblings = {}
+        this.siblings.active = !!this.$container.dataset.siblings
+        
+        if(this.siblings.active)
+        {
+            if(!this.siblings.active)
+            {
+                return
+            }
+
+            //create DOM
+            this.siblings.$previous = document.createElement('button')
+            this.siblings.$previous.classList.add('sibling', 'previous', 'firstLast')
+            this.$container.appendChild(this.siblings.$previous)
+            
+            this.siblings.$next = document.createElement('button')
+            this.siblings.$next.classList.add('sibling', 'next')
+            this.$container.appendChild(this.siblings.$next)
+
+            // Listen click events
+            this.siblings.$previous.addEventListener('click', () =>
+            {
+                this.previous()
+            })
+
+            this.siblings.$next.addEventListener('click', () =>
+            {
+                this.next()
+            })
+        }
+    }
+
+    previous()
+    {
+        let index = this.pages.index - 1
+
+        if(index < 0)
+        {
+            index = this.pages.$items.length - 1
+        }
+        if(index == 0)
+        {
+            this.siblings.$previous.classList.add('firstLast')
+        }
+
+        this.gotTo(index)
+    }
+
+    next()
+    {
+        let index = this.pages.index + 1
+
+        if(index > this.pages.$items.length - 1)
+        {
+            index = 0
+        }
+        if(index == this.pages.$items.length - 1)
+        {
+            this.siblings.$next.classList.add('firstLast')
+        }
+
+        this.gotTo(index)
+    }
+
+    gotTo(_index)
+    {
+        // Update pages classes
+        for(let i = 0; i < this.pages.$items.length; i++)
+        {
+            const $page = this.pages.$items[i]
+
+            if(i < _index)
+            {
+                $page.classList.add('is-before')
+                $page.classList.remove('is-current','is-after')
+            }
+            else if(i === _index)
+            {
+                $page.classList.add('is-current')
+                $page.classList.remove('is-before','is-after')
+            }
+            else
+            {
+                $page.classList.add('is-after')
+                $page.classList.remove('is-current','is-before')
+            }
+        }
+
+        // Save index
+        this.pages.index = _index
+
+        if(this.pages.index > 0 && this.pages.index < this.pages.$items.length - 1)
+        {
+            this.siblings.$next.classList.remove('firstLast')
+            this.siblings.$previous.classList.remove('firstLast')
+        }
+    }
+}

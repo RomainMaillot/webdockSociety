@@ -271,3 +271,100 @@
 {
     transform: rotate(-45deg);
 }
+
+/* Pages */
+.pages--container
+{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.pages--container .pages,
+.pages--container .page,
+.pages--container .content
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pages--container .page,
+.pages--container .content
+{
+    transition: transform 0.6s cubic-bezier(0.075, 0.25, 0.165, 1);
+    will-change: transform;
+}
+
+.pages--container .page.is-before
+{
+    transform: translateX(-100%)
+}
+.pages--container .page.is-before .content
+{
+    transform: translateX(90%)
+}
+
+.pages--container .page.is-after
+{
+    transform: translateX(100%)
+}
+.pages--container .page.is-after .content
+{
+    transform: translateX(-90%)
+}
+
+/* Siblings */
+
+.pages--container .sibling
+{
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    background: #00000022;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+.pages--container:hover .sibling
+{
+    opacity: 1;
+}
+.pages--container .sibling.previous
+{
+    left: 0;
+}
+
+.pages--container .sibling.firstLast
+{
+    display: none;
+}
+
+.pages--container .sibling.next
+{
+    right: 0;
+}
+.pages--container .sibling::after
+{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+.pages--container .sibling.previous::after
+{
+    transform: translateX(6px) rotate(-135deg)
+}
+.pages--container .sibling.next::after
+{
+    transform: translateX(-6px) rotate(45deg)
+}
