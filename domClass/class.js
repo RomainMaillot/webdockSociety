@@ -136,3 +136,26 @@ class Menu
         )
     }
 }
+/* Creation of a close button */
+class ButtonClose
+{
+    constructor($container, $elementClose)
+    {
+        this.$container = $container
+        this.$elementClose = $elementClose
+
+        this.close()
+    }
+
+    close()
+    {
+        this.$container.addEventListener(
+            'click',
+            () =>
+            {
+                this.$container.classList.toggle('close')
+                this.$elementClose.classList.toggle('open')
+            }
+        )
+    }
+}
