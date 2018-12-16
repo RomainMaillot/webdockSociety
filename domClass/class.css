@@ -224,3 +224,50 @@
     height: 90%;
     z-index: -1;
 }
+
+/* Close button */
+
+.btn--close 
+{
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    z-index: 20;
+    cursor: pointer;
+    transition: transform 0.3s;
+    will-change: transform;
+}
+
+.btn--close:hover 
+{
+    opacity: 1;
+}
+
+.btn--close.close
+{
+    transform: rotate(90deg)
+}
+
+.btn--close::before, 
+.btn--close::after 
+{
+    content: "";
+    position: absolute;
+    left: 15px;
+    height: 33px;
+    width: 2px;
+    background-color: #333333;
+}
+
+.btn--close::before 
+{
+    transform: rotate(45deg);
+}
+
+.btn--close::after 
+{
+    transform: rotate(-45deg);
+}
