@@ -3,69 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <title>Webdock</title>
     <link rel="stylesheet" href="domClass/class.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div class="pages--container js-pages" data-siblings="true">
-        <div class="pages">
-            <div class="page">
-                <div class="content">
-                    <div class="menu js-menu">
-                        <div class="menu__cards">
-                            <div class="menu__card" data-background="images/background_roms.png">
-                                <div class="menu__card__content">
-                                    <h2 class="card__title">les roms</h2>
-                                    <div class="card__content__inner">
-                                        <p class="card__text">Déconstruisons ensemble l’entièreté des préjugés autour de cette communauté dont la richesse culturelle doit perdurer…</p>
-                                        <div class="btn--main js-button" data-text="ICI"></div>
-                                    </div>
-                                    <img class="frontImage" src="images/roms.png" alt="">
-                                </div>
-                            </div>
-                            <div class="menu__card" data-background="images/background_roms.png">
-                                <div class="menu__card__content">
-                                    <h2 class="card__title">les roms</h2>
-                                    <div class="card__content__inner">
-                                        <p class="card__text">Déconstruisons ensemble l’entièreté des préjugés autour de cette communauté dont la richesse culturelle doit perdurer…</p>
-                                        <div class="btn--main js-button" data-text="ICI"></div>
-                                    </div>
-                                    <img class="frontImage" src="images/roms.png" alt="">
-                                </div>
-                            </div>
-                            <div class="menu__card" data-background="images/background_roms.png" data-incoming="true">
-                                <div class="menu__card__content">
-                                    <h2 class="card__title">les roms</h2>
-                                    <div class="card__content__inner">
-                                        <p class="card__text">Déconstruisons ensemble l’entièreté des préjugés autour de cette communauté dont la richesse culturelle doit perdurer…</p>
-                                    </div>
-                                    <img class="frontImage" src="images/roms.png" alt="">
-                                </div>
-                            </div>
+    <nav>
+        <ul class="topnav">
+            <li><a href="index.html"><img src="images/logo.png"></a></li>
+            <li class="right aboutus--open"><a href="#">qui sommes nous?</a></li>
+        </ul>
+    </nav>
+    <div class="container"> 
+        <div class="sentences">
+            <p class="sentences__ghost--text show">Découvrez ou redécouvrez des rites, des traditions, des dialectes…</p>
+            <p class="sentences__ghost--text hideSecond">Dans une société où l’uniformisation culturelle tend à prendre le dessus…</p>
+            <p class="sentences__ghost--text hideThird">Prenez conscience de l’enjeu majeur que peut être la mémoire</p>
+            <div class="btn--main js-button btn-menu" data-text="C'EST PARTI!"></div>
+        </div>
+        <div class="menu js-menu">
+            <div class="menu__cards">
+                <div class="menu__card" data-background="images/background_roms.png">
+                    <div class="menu__card__content">
+                        <h2 class="card__title">les roms</h2>
+                        <div class="card__content__inner">
+                            <p class="card__text">Déconstruisons <span class="strong">ensemble</span> l’entièreté des <span class="strong">préjugés</span> autour de cette communauté dont la <span class="strong">richesse culturelle</span> doit perdurer…</p>
+                            <div class="btn--main js-button" data-text="commencer"></div>
                         </div>
+                        <img class="frontImage" src="images/roms.png" alt="">
                     </div>
                 </div>
-            </div>
-            <div class="page">
-                <div class="content">
-                    <div class="test"></div>
+                <div class="menu__card" data-background="images/background_betes.png">
+                    <div class="menu__card__content">
+                        <h2 class="card__title">les bétés</h2>
+                        <div class="card__content__inner">
+                            <p class="card__text">Découvrez les merveilles que renferme un peuple peu connu de Côte d’Ivoire, pour qui la <span class="strong">musique</span> et les <span class="strong">danses traditionnelles</span> rythment leur vie.</p>
+                            <div class="btn--main js-button" data-text="commencer"></div>
+                        </div>
+                        <img class="frontImage" src="images/bete.png" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="page">
-                <div class="content">
-                    <div class="test"></div>
-                </div>
-            </div>
-            <div class="page">
-                <div class="content">
-                    <div class="test"></div>
+                <div class="menu__card" data-background="images/background_inuits.png" data-incoming="true">
+                    <div class="menu__card__content">
+                        <h2 class="card__title">les inuits</h2>
+                        <div class="card__content__inner">
+                            <p class="card__text">Une nouvelle culture à découvrir bientôt …</p>
+                        </div>
+                        <img class="frontImage" src="images/inuit.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
+    <div class="about js-about">
+        <div class="about__inner">
+            <div class="btn--close js-button-close"></div>
+            <h1 class="about__title">Qui sommes nous ?</h1>
+            <h2 class="about__subtitle">Qu'est ce que la culture immatérielle ?</h2>
+            <p class="about__text">Depuis sa redéfinition par l’UNESCO, le terme <strong>« patrimoine culturel »</strong> ne s’arrête pas aux monuments, aux collections d’objets. Celui-ci comprend également un ensemble de <strong>connaissances immatérielles</strong> comme les expressions vivantes, les <strong>traditions</strong> orales, les arts du spectacle, <strong>rituels</strong> et événements festifs, ou le <strong>savoir-faire</strong> nécessaire à l’artisanat traditionnel.</p>
+            <h2 class="about__subtitle">Paedeia prône la mémoire culturelle pour assurer une transmission de générations en générations.</h2>
+            <p class="about__text">Paedeia est parti d’un constat extrêmement fort : face à une mondialisation croissante, ce patrimoine culturel immatériel apparaît <strong>fragile à l’échelle internationale</strong>. De nombreuses associations sont amenées à se battre pour défendre la transmission de connaissances propres à certaines communauté et la <strong>mémoire</strong> de celles-ci au sein de la collectivité.</p>
+            <div class="quotation">
+                <h2 class="quotation__sign">«</h2>
+                <p class="quotation__text">Élargir notre ouverture d’esprit et garder en mémoire la culture immatérielle des communautés du monde entier est essentiel au dialogue inter culturel, et encourage le respect d’autres modes de vie.</p>
+            </div>
+            <p class="about__text">Ainsi, l’objectif de Paedeia est simple : <strong>promouvoir ces cultures</strong>, les garder en esprit afin de les <strong>transmettre</strong> à notre tour plus tard aux nouvelles générations.</p>
+            <p class="about__text">Créé depuis seulement quelques semaines,  Paedeia  a eu l’honneur de fournir une <strong>expérience immersive</strong> unique pour découvrir deux communautés en se basant sur de <strong>réels témoignages</strong> : les Roms, et les Bétés vivant en Côte d’Ivoire.</p>
+            <div class="end">
+                <img src="images/sur_site/blocs_accueil_a_propos/icones/monde.png" class="end__img" alt="world">
+                <div class="end__page">
+                    <h2 class="end__page__subtitle">Un projet qui compte s’étendre à l’international</h2>
+                    <p class="end__page__text">Paedeia souhaite d’ici fin 2019, élargir son champ d’action et étudier d’autres cultures du monde entier, vous pouvez suivre l’avancée de nos recherches directement sur nos réseaux sociaux !</p>
+                </div>
+            </div>
+            <div class="about__placement">
+                <div class="footer-logos">
+                    <img src="images/sur_site/blocs_accueil_a_propos/icones/twitter_contour.png" class="footer-logos__img" alt="twitter">
+                    <img src="images/sur_site/blocs_accueil_a_propos/icones/insta_contour.png" class="footer-logos__img" alt="instagram">
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="domClass/class.js"></script>
     <script src="scripts/script.js"></script>
 </body>
