@@ -32,3 +32,21 @@ $aboutOpen.addEventListener(
         $about.classList.toggle('open')
     }
 )
+
+const $sentence = document.querySelector('.show')
+const $secondSentence = document.querySelector('.hideSecond')
+const $thirdSentence = document.querySelector('.hideThird')
+
+
+$secondSentence.style.display='none'
+$thirdSentence.style.display='none'
+
+$sentence.addEventListener('click', (_event) => {
+    $sentence.style.display='none'
+    $secondSentence.style.display='block'
+})
+
+$secondSentence.addEventListener('click', (_event) => {
+    $secondSentence.style.display='none'
+    $thirdSentence.style.display='block'
+})

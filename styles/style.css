@@ -28,6 +28,10 @@ span.strong
     font-weight: bold;
 }
 
+/**
+*   Navigation bar
+ */
+
 nav
 {
     position: fixed;
@@ -70,6 +74,10 @@ nav ul.topnav li a img
     height: 100px;
 }
 
+/**
+*   Fade in phrases
+ */
+
 .sentences
 {
     display: flex;
@@ -89,8 +97,23 @@ nav ul.topnav li a img
 
 .sentences .sentences__ghost--text
 {
-    width: 35%;
+    width: 42%;
     text-align: center;
+    animation: fadeIn 2s;
+    /*animation-delay: 130ms;*/
+    cursor: pointer;
+}
+
+@keyframes fadeIn
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
 }
 
 @font-face
@@ -103,7 +126,7 @@ nav ul.topnav li a img
 p
 {
     font-family: "Bodoni", sans-serif;
-    font-size: 2rem;
+    font-size: 2.3rem;
 }
 
 /* Menu */
