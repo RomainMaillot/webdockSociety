@@ -7,6 +7,13 @@ body
     color: white;
 }
 
+@font-face
+{
+    font-family: "Bodoni";
+    font-weight: bold;
+    src: url('../fonts/BodoniFLF-Bold.ttf');
+}
+
 /* HEADER */
 
 .page.page1,
@@ -36,6 +43,7 @@ body
     font-size: 3rem;
     align-self: center;
     text-transform: uppercase;
+    font-family: "Bodoni", sans-serif;
 }
 
 .page__header a img
@@ -73,6 +81,7 @@ body
     width: 50%;
     text-align: center;
     align-self: center;
+    font-family: "Bodoni", sans-serif;
 }
 
 .main__mask
