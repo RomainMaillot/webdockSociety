@@ -116,8 +116,15 @@ class Menu
                     }
                     $card.classList.add('active')
                     this.setCardWidth(this.cards.width*2,$card)
-                    this.$parallaxe = $card.querySelector('.frontImage')
-                    this.mouseParallaxe()
+                    if(!$card.dataset.incoming)
+                    {
+                        this.$parallaxe = $card.querySelector('.frontImage')
+                        this.mouseParallaxe()
+                    }
+                    else
+                    {
+                        this.$parallaxe = $card.querySelector('.card__title')
+                    }
                 }
             )
         }
