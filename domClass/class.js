@@ -204,15 +204,21 @@ class Pages
             this.$container.appendChild(this.siblings.$next)
 
             // Listen click events
-            this.siblings.$previous.addEventListener('click', () =>
-            {
-                this.previous()
-            })
+            this.siblings.$previous.addEventListener(
+                'click', 
+                () =>
+                {
+                    this.previous()
+                }
+            )
 
-            this.siblings.$next.addEventListener('click', () =>
-            {
-                this.next()
-            })
+            this.siblings.$next.addEventListener(
+                'click',
+                () =>
+                {
+                    this.next()
+                }
+            )
         }
     }
 

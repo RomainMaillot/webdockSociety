@@ -325,18 +325,12 @@
     top: 0;
     width: 60px;
     height: 100%;
-    background: #00000022;
     border: none;
     outline: none;
     cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s;
-    will-change: opacity;
+    background: none;
 }
-.pages--container:hover .sibling
-{
-    opacity: 1;
-}
+
 .pages--container .sibling.previous
 {
     left: 0;
@@ -351,20 +345,32 @@
 {
     right: 0;
 }
+
 .pages--container .sibling::after
 {
     content: '';
     display: block;
-    width: 20px;
-    height: 20px;
-    border-top: 2px solid #ffffff;
-    border-right: 2px solid #ffffff;
+    width: 60px;
+    height: 60px;
+    border-top: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    border-radius: 5px;
+    opacity: 0.50;
+    transition: opacity 0.3s;
+    will-change: opacity;
 }
+
+.pages--container .sibling:hover::after
+{
+    opacity: 1;
+}
+
 .pages--container .sibling.previous::after
 {
-    transform: translateX(6px) rotate(-135deg)
+    transform: translateX(30px) rotate(-135deg)
 }
+
 .pages--container .sibling.next::after
 {
-    transform: translateX(-6px) rotate(45deg)
+    transform: translateX(-30px) rotate(45deg)
 }
