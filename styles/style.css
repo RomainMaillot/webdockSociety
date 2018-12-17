@@ -23,3 +23,8 @@ body
     position: absolute;
     left: 40%;
 }
+
+span.strong
+{
+    font-weight: bold;
+}

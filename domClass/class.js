@@ -304,6 +304,9 @@ class Icon
         if(this.$container.dataset.media = history)
         {
             // Create Dom
+            this.documentText = this.$container.querySelector('.icon__text')
+            this.$container.removeChild(this.documentText)
+
             this.icon = document.createElement('img')
             this.icon.src = 'images/fichier.png'
             this.icon.classList.add('icon')
@@ -323,6 +326,21 @@ class Icon
             this.iconDocumentClose.classList.add('btn--close', 'js-button-close')
             this.iconActionContainer.appendChild(this.iconDocumentClose)
             new ButtonClose(this.iconDocumentClose,this.iconActionContainer)
+
+            // Create text container
+            this.textContainer = document.createElement('div')
+            this.textContainer.classList.add('text__container')
+            this.iconDocument.appendChild(this.textContainer)
+
+            // Create inside text
+            this.documentTitle = document.createElement('h2')
+            this.documentTitle.classList.add('icon__title')
+            this.documentTitle.textContent = `${this.$container.dataset.title}`
+            this.textContainer.appendChild(this.documentTitle)
+
+            // Create inside paragraph
+            
+            this.textContainer.appendChild(this.documentText)
         }
     }
 
