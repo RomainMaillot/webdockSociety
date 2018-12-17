@@ -119,7 +119,7 @@ class Menu
                     }
                     else
                     {
-                        this.mouseParallaxe.stop
+                        this.$parallaxe = $card.querySelector('.card__title')
                     }
                 }
             )
