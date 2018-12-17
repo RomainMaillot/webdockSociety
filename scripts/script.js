@@ -7,11 +7,11 @@ const $closeButton = document.querySelectorAll('.js-button-close')
 const $pages = document.querySelector('.js-pages')
 const $icons = document.querySelectorAll('.js-icon')
 
-for(const $button of $buttons)
+for (const $button of $buttons)
 {
     const button = new Button($button)
 }
-for(const $button of $closeButton)
+for (const $button of $closeButton)
 {
     const button = new ButtonClose($button,$about)
 }
@@ -34,21 +34,24 @@ $aboutOpen.addEventListener(
         $about.classList.toggle('open')
     }
 )
+let $sentences = []
+$sentences.push(document.querySelector('.show'))
+$sentences.push(document.querySelector('.hideSecond'))
+$sentences.push(document.querySelector('.hideThird'))
 
-const $sentence = document.querySelector('.show')
-const $secondSentence = document.querySelector('.hideSecond')
-const $thirdSentence = document.querySelector('.hideThird')
+$sentences[1].style.display='none'
+$sentences[2].style.display='none'
 
+let i = 1;
 
-$secondSentence.style.display='none'
-$thirdSentence.style.display='none'
+const display = () =>
+{
+    if (i < 3)
+    {
+        $sentences[i - 1].style.display = 'none'
+        $sentences[i].style.display = 'block'
+        i++
+    }
+}
 
-$sentence.addEventListener('click', (_event) => {
-    $sentence.style.display='none'
-    $secondSentence.style.display='block'
-})
-
-$secondSentence.addEventListener('click', (_event) => {
-    $secondSentence.style.display='none'
-    $thirdSentence.style.display='block'
-})
+const sentencesDisplay = setInterval(display, 4000)
