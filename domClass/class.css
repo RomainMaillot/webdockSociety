@@ -407,6 +407,7 @@
 .document__container.open
 {
     opacity: 1;
+    z-index: 20;
 }
 
 .document__container .document
@@ -415,13 +416,18 @@
     height: 90%;
     width: 30%;
     margin: auto;
-    right: 5%;
+    right: 10%;
     align-self: center;
     background: #251826;
     transform: translateX(100%);
     transition: transform 0.5s;
     display: flex;
     justify-content: center;
+}
+
+.document__container .btn--close
+{
+    right: 5%;
 }
 
 .document__container.open .document
