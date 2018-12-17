@@ -4,6 +4,8 @@ const $menuButton = document.querySelector('.btn-menu')
 const $aboutOpen = document.querySelector('.aboutus--open')
 const $about = document.querySelector('.js-about')
 const $closeButton = document.querySelectorAll('.js-button-close')
+const $pages = document.querySelector('.js-pages')
+const $icons = document.querySelectorAll('.js-icon')
 
 for(const $button of $buttons)
 {
