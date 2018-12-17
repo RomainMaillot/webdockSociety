@@ -288,3 +288,52 @@ class Pages
         }
     }
 }
+// Class icon
+class Icon
+{
+    constructor($container)
+    {
+        this.$container = $container
+
+        this.createIcon()
+        this.iconAction()
+    }
+
+    createIcon()
+    {
+        if(this.$container.dataset.media = history)
+        {
+            // Create Dom
+            this.icon = document.createElement('img')
+            this.icon.src = 'images/fichier.png'
+            this.icon.classList.add('icon')
+            this.$container.appendChild(this.icon)
+
+            // Create Dom action
+            this.iconActionContainer = document.createElement('div')
+            this.iconActionContainer.classList.add('document__container')
+            this.$container.appendChild(this.iconActionContainer)
+
+            this.iconDocument = document.createElement('div')
+            this.iconDocument.classList.add('document')
+            this.iconActionContainer.appendChild(this.iconDocument)
+
+            // Create crossClose
+            this.iconDocumentClose = document.createElement('div')
+            this.iconDocumentClose.classList.add('btn--close', 'js-button-close')
+            this.iconActionContainer.appendChild(this.iconDocumentClose)
+            new ButtonClose(this.iconDocumentClose,this.iconActionContainer)
+        }
+    }
+
+    iconAction()
+    {
+        this.icon.addEventListener(
+            'click',
+            () =>
+            {
+                this.iconActionContainer.classList.add('open')
+            }
+        )
+    }
+}

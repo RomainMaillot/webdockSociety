@@ -329,6 +329,7 @@
     outline: none;
     cursor: pointer;
     background: none;
+    z-index: 1;
 }
 
 .pages--container .sibling.previous
@@ -373,4 +374,56 @@
 .pages--container .sibling.next::after
 {
     transform: translateX(-30px) rotate(45deg)
+}
+
+/* Icons */
+
+.icon
+{
+    width: 40px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    will-change: opacity;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.icon:hover
+{
+    opacity: 1;
+}
+
+.document__container
+{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #25182680;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+.document__container.open
+{
+    opacity: 1;
+}
+
+.document__container .document
+{
+    position: absolute;
+    height: 90%;
+    width: 30%;
+    margin: auto;
+    right: 5%;
+    align-self: center;
+    background: #251826;
+    transform: translateX(100%);
+    transition: transform 0.5s;
+}
+
+.document__container.open .document
+{
+    transform: translateX(0);
 }

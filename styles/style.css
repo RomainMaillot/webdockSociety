@@ -17,3 +17,9 @@ body
     width: 100vw;
     background: #000000;
 }
+
+.icon
+{
+    position: absolute;
+    left: 40%;
+}
