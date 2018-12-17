@@ -301,7 +301,8 @@ class Icon
 
     createIcon()
     {
-        if(this.$container.dataset.media = history)
+        // Icon document
+        if(this.$container.dataset.media == 'history')
         {
             // Create Dom
             this.documentText = this.$container.querySelector('.icon__text')
@@ -309,7 +310,7 @@ class Icon
 
             this.icon = document.createElement('img')
             this.icon.src = 'images/fichier.png'
-            this.icon.classList.add('icon')
+            this.icon.classList.add('icon', 'history')
             this.$container.appendChild(this.icon)
 
             // Create Dom action
@@ -339,19 +340,62 @@ class Icon
             this.textContainer.appendChild(this.documentTitle)
 
             // Create inside paragraph
-            
+            this.textContainer.appendChild(this.documentText)
+        }
+        if(this.$container.dataset.media == 'info')
+        {
+            // Create Dom
+            this.documentText = this.$container.querySelector('.icon__text')
+            this.$container.removeChild(this.documentText)
+
+            this.icon = document.createElement('h2')
+            this.icon.textContent = '?'
+            this.icon.classList.add('icon')
+            this.$container.appendChild(this.icon)
+
+            // Create Dom action
+            this.iconActionContainer = document.createElement('div')
+            this.iconActionContainer.classList.add('document__container', 'info')
+            this.$container.appendChild(this.iconActionContainer)
+
+            this.iconDocument = document.createElement('div')
+            this.iconDocument.classList.add('document')
+            this.iconActionContainer.appendChild(this.iconDocument)
+
+            // Create crossClose
+            this.iconDocumentClose = document.createElement('div')
+            this.iconDocumentClose.classList.add('btn--close', 'js-button-close')
+            this.iconActionContainer.appendChild(this.iconDocumentClose)
+            new ButtonClose(this.iconDocumentClose,this.iconActionContainer)
+
+            // Create text container
+            this.textContainer = document.createElement('div')
+            this.textContainer.classList.add('text__container')
+            this.iconDocument.appendChild(this.textContainer)
+
+            // Create inside text
+            this.documentTitle = document.createElement('h2')
+            this.documentTitle.classList.add('icon__title')
+            this.documentTitle.textContent = `${this.$container.dataset.title}`
+            this.textContainer.appendChild(this.documentTitle)
+
+            // Create inside paragraph
             this.textContainer.appendChild(this.documentText)
         }
     }
 
     iconAction()
     {
-        this.icon.addEventListener(
-            'click',
-            () =>
-            {
-                this.iconActionContainer.classList.add('open')
-            }
-        )
+        // Icon document
+        if(this.$container.dataset.media = history)
+        {
+            this.icon.addEventListener(
+                'click',
+                () =>
+                {
+                    this.iconActionContainer.classList.add('open')
+                }
+            )
+        }
     }
 }
