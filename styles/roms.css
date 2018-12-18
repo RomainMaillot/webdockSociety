@@ -24,6 +24,13 @@ body
     background-position: center;
 }
 
+.page.page4
+{
+    background: url('../images/univers_roms/fondseul.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
 .page .content
 {
     background: #3E1E5380;
@@ -337,4 +344,103 @@ body
 {
     font-family: "Bodoni";
     src: url('../fonts/BodoniFLF-Roman.ttf');
+}
+
+.page__header__panorama
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.page__header__panorama a img {
+    height: 100px
+}
+
+.topnav--right
+{
+    margin-right: 20px;
+    align-self: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+
+.topnav--left
+{
+    margin: 20px;
+}
+
+/* How to use */
+
+.instructions {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    z-index: 20;
+}
+
+.instructions .instructions__inner {
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 100%;
+    padding: 20px 60px;
+    background: #251826;
+    opacity: 0.95;
+    color: #FFFFFF;
+    transform: translateX(0%);
+    transition-property: transform;
+    transition-duration: 1s;
+    will-change: transform;
+    overflow: hidden;
+}
+
+.instructions.open .instructions__inner {
+    transform: translateX(-100%);
+}
+
+.btn--close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    z-index: 20;
+    cursor: pointer;
+    transition: transform 0.3s;
+    will-change: transform;
+}
+
+.btn--close.close {
+    transform: rotate(90deg);
+}
+
+.btn--close::before, .btn--close::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    height: 33px;
+    width: 2px;
+    background-color: #FFFFFF;
+}
+
+.btn--close::before {
+    transform: rotate(45deg);
+}
+
+.btn--close::after {
+    transform: rotate(-45deg);
+}
+
+.instructions__title
+{
+    font-family: "Bodoni";
+    font-weight: bold;
+    text-transform: uppercase;
 }
