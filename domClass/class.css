@@ -629,26 +629,6 @@ h2.icon__inner
     font-size: 0.8rem;
 }
 
-.button__container .time::after
-{
-    content: '';
-    width: 22px;
-    height: 2px;
-    position: absolute;
-    background: white;
-    bottom: 6px;
-    right: -140%;
-    transform: rotate(45deg);
-    opacity: 0;
-    transition: opacity 0.3s;
-    will-change: opacity;
-}
-
-.button__container.mute .time::after
-{
-    opacity: 1;
-}
-
 .button__container .volume
 {
     position: absolute;
@@ -658,6 +638,31 @@ h2.icon__inner
     opacity: 0.5;
     transition: opacity 0.3s;
     will-change: opacity;
+}
+
+.button__container .volume img
+{
+    height: 100%;
+}
+
+.button__container .volume::after
+{
+    content: '';
+    width: 22px;
+    height: 2px;
+    position: absolute;
+    background: white;
+    right: 25%;
+    bottom: 45%;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+
+.button__container.mute .volume::after
+{
+    opacity: 1;
 }
 
 .button__container .volume:hover
@@ -733,26 +738,6 @@ h2.icon__inner
     opacity: 0.5;
     transition: opacity 0.3s;
     will-change: opacity;
-}
-
-.button__container.audio .volume::after
-{
-    content: '';
-    width: 22px;
-    height: 2px;
-    position: absolute;
-    background: white;
-    right: 25%;
-    bottom: 45%;
-    transform: rotate(45deg);
-    opacity: 0;
-    transition: opacity 0.3s;
-    will-change: opacity;
-}
-
-.button__container.mute .volume::after
-{
-    opacity: 1;
 }
 
 .button__container.audio .volume img

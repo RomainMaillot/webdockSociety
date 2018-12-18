@@ -536,10 +536,14 @@ class VideoPlayer
         this.$buttonContainer.appendChild(this.$currentTime)
         
         // Create volume
+        this.$volumeContainer = document.createElement('div')
+        this.$volumeContainer.classList.add('volume')
+        this.$buttonContainer.appendChild(this.$volumeContainer)
+
         this.$volume = document.createElement('img')
         this.$volume.src = 'images/iconVolume_player.png'
-        this.$volume.classList.add('volume')
-        this.$buttonContainer.appendChild(this.$volume)
+        this.$volume.classList.add('volume--image')
+        this.$volumeContainer.appendChild(this.$volume)
 
         // Create full screen
         this.$fullScreen = document.createElement('img')
