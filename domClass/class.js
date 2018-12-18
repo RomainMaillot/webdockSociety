@@ -342,6 +342,7 @@ class Icon
             // Create inside paragraph
             this.textContainer.appendChild(this.documentText)
         }
+        // Icon info
         if(this.$container.dataset.media == 'info')
         {
             // Create Dom
@@ -386,6 +387,7 @@ class Icon
             // Create inside paragraph
             this.textContainer.appendChild(this.documentText)
         }
+        // Icon video
         if(this.$container.dataset.media == 'video')
         {
             // Create Dom
@@ -426,6 +428,7 @@ class Icon
             this.documentTitle.textContent = `${this.$container.dataset.title}`
             this.iconDocument.appendChild(this.documentTitle)
         }
+        // Icon audio
         if(this.$container.dataset.media == 'audio')
         {
             // Create Dom
@@ -472,6 +475,36 @@ class Icon
             this.documentSubtitle.textContent = `${this.$container.dataset.subtitle}`
             this.iconDocument.appendChild(this.documentSubtitle)
         }
+        // Icon more
+        if(this.$container.dataset.media == 'picture')
+        {
+            // Create Dom
+            this.icon = document.createElement('div')
+            this.icon.classList.add('icon')
+            this.$container.appendChild(this.icon)
+
+            this.iconInner = document.createElement('h2')
+            this.iconInner.textContent = '+'
+            this.iconInner.classList.add('icon__inner')
+            this.icon.appendChild(this.iconInner)
+
+            // Create Dom action
+            this.iconActionContainer = document.createElement('div')
+            this.iconActionContainer.classList.add('document__container', 'more')
+            this.$container.appendChild(this.iconActionContainer)
+
+            this.iconDocument = document.createElement('div')
+            this.iconDocument.classList.add('document')
+            this.iconActionContainer.appendChild(this.iconDocument)
+
+            this.createPictures()
+
+            // Create crossClose
+            this.iconDocumentClose = document.createElement('div')
+            this.iconDocumentClose.classList.add('btn--close', 'js-button-close')
+            this.iconActionContainer.appendChild(this.iconDocumentClose)
+            new ButtonClose(this.iconDocumentClose,this.iconActionContainer)
+        }
     }
 
     iconAction()
@@ -483,6 +516,49 @@ class Icon
                 this.iconActionContainer.classList.add('open')
             }
         )
+    }
+
+    createPictures()
+    {
+        this.$pictures = this.$container.querySelectorAll('.picture')
+        for(const $picture of this.$pictures)
+        {
+            this.$container.removeChild($picture)
+            this.pictureContainer = document.createElement('div')
+            this.pictureContainer.classList.add('picture__container')
+            this.iconDocument.appendChild(this.pictureContainer)
+            this.pictureContainer.appendChild($picture)
+
+            // Picture
+            $picture.style.backgroundImage = `url(${$picture.dataset.src})`
+
+            // Text
+            // Create text container
+            this.textContainer = document.createElement('div')
+            this.textContainer.classList.add('picture__text__container')
+            this.pictureContainer.appendChild(this.textContainer)
+
+            // Create inside title
+            this.pictureTitle = document.createElement('h2')
+            this.pictureTitle.classList.add('picture__title')
+            this.pictureTitle.textContent = `${$picture.dataset.title}`
+            this.textContainer.appendChild(this.pictureTitle)
+
+            // Create inside paragraph
+            this.documentText = document.createElement('p')
+            this.documentText.classList.add('picture__text')
+            this.documentText.textContent = `${$picture.dataset.text}`
+            this.textContainer.appendChild(this.documentText)
+
+            $picture.addEventListener(
+                'click',
+                () =>
+                {
+                    $picture.parentNode.classList.add('appear')
+                    $picture.parentNode.querySelector('.picture__text__container').classList.add('appear')
+                }
+            )
+        }
     }
 }
 // Class player Video

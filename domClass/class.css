@@ -472,6 +472,30 @@ h2.icon__inner
     background: none;
 }
 
+.document__container.more
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.document__container.more .document
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+    width: 80%;
+    background: none;
+}
+
+.picture__container
+{
+    align-self: center;
+    height: 50%;
+    width: 30%;
+}
+
 .document__container .btn--close
 {
     right: 5%;
@@ -722,7 +746,7 @@ h2.icon__inner
 .button__container.audio .seek .fill
 {
     width: 100%;
-    height: 104%;
+    height: 100%;
     background: #3E1E53;
     transform-origin: 0 0;
     transform: translateX(-100%);
@@ -748,4 +772,79 @@ h2.icon__inner
 .button__container.audio .volume:hover
 {
     opacity: 1;
+}
+
+/* More Picture */
+
+.picture__container .picture
+{
+    height: 60%;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+.picture__container .picture::after
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #FFFFFF;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+
+.picture__container .picture:hover::after,
+.picture__container.appear .picture::after
+{
+    opacity: 0;
+}
+
+.picture__text__container
+{
+    height: 40%;
+    background: #25182690;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+    will-change: transform;
+    visibility: hidden;
+}
+
+.picture__text__container.appear
+{
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.picture__title
+{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 5% 0;
+    position: relative;
+}
+
+.picture__title::after
+{
+    content: '';
+    width: 80%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    right: 9%;
+    background: white;
+}
+
+.picture__text
+{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 5%;
+    font-size: 0.8rem;
 }
