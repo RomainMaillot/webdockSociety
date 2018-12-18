@@ -1,28 +1,35 @@
+
+/*
+*   Preloader screen
+ */
+
 const $preloader = document.querySelector('.preloader')
 const $container = document.querySelector('.container')
 const $percent = document.querySelector('.preloader__percentage')
 
-window.addEventListener('load', () =>
-{
-    let $counter = 5
+window.addEventListener('load', () => {
 
-    const frame = () =>
-    {
-        console.log($counter)
-        if ($counter === 100) {
-            $preloader.style.display = 'none'
-            $container.style.transform = `translateY(${0}`
-            clearInterval($percentageLoader)
-            const sentencesDisplay = setInterval(display, 4000)
+        let $counter = 0
+
+        const frame = () => {
+            if ($counter === 100) {
+                $preloader.style.display = 'none'
+                $container.style.transform = `translateY(${0}`
+                clearInterval($percentageLoader)
+                const sentencesDisplay = setInterval(display, 4000)
+            }
+            else {
+                $counter += 1
+                $percent.textContent = $counter + '%'
+            }
         }
-        else
-        {
-            $counter += 1
-            $percent.textContent = $counter + '%'
-        }
-    }
-    const $percentageLoader = setInterval(frame, 50)
+
+        const $percentageLoader = setTimeout(setInterval(frame, 50), 3)
 })
+
+/*
+*   Button
+ */
 
 const $buttons = document.querySelectorAll('.js-button')
 const $menu = document.querySelector('.js-menu')
@@ -58,6 +65,11 @@ $aboutOpen.addEventListener(
         $about.classList.toggle('open')
     }
 )
+
+/*
+*   Ghost text
+ */
+
 let $sentences = []
 $sentences.push(document.querySelector('.show'))
 $sentences.push(document.querySelector('.hideSecond'))
