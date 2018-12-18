@@ -516,6 +516,23 @@ class Icon
                 this.iconActionContainer.classList.add('open')
             }
         )
+        if(this.$container.dataset.media == 'audio')
+        {
+            this.icon.addEventListener(
+                'mouseenter',
+                () =>
+                {
+                    this.iconImage.src = 'images/audio-violet.png'
+                }
+            )
+            this.icon.addEventListener(
+                'mouseleave',
+                () =>
+                {
+                    this.iconImage.src = 'images/audio-icon.png'
+                }
+            )
+        }
     }
 
     createPictures()
