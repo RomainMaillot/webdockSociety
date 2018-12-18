@@ -415,10 +415,10 @@ class Icon
 
             // Create text container
             this.videoContainer = document.createElement('video')
-            this.videoContainer.src = 'images/video.mp4'
+            this.videoContainer.src = this.$container.dataset.src
             this.videoContainer.classList.add('video__container', 'js-videoPlayer')
             this.iconDocument.appendChild(this.videoContainer)
-            players.push(new VideoPlayer(this.iconDocument,this.videoContainer))
+            playersVideo.push(new VideoPlayer(this.iconDocument,this.videoContainer))
 
             // Create inside text
             this.documentTitle = document.createElement('h2')
@@ -453,18 +453,24 @@ class Icon
             this.iconActionContainer.appendChild(this.iconDocumentClose)
             new ButtonClose(this.iconDocumentClose,this.iconActionContainer)
 
-            // Create text container
-            this.audioContainer = document.createElement('audio')
-            this.audioContainer.src = 'images/audio.mp3'
-            this.audioContainer.classList.add('video__container', 'js-videoPlayer')
-            this.iconDocument.appendChild(this.audioContainer)
-            players.push(new MusicPlayer(this.iconDocument,this.audioContainer))
-
             // Create inside text
             this.documentTitle = document.createElement('h2')
-            this.documentTitle.classList.add('icon__title')
+            this.documentTitle.classList.add('icon__title', 'audio__time')
             this.documentTitle.textContent = `${this.$container.dataset.title}`
             this.iconDocument.appendChild(this.documentTitle)
+
+            // Create text container
+            this.audioContainer = document.createElement('audio')
+            this.audioContainer.src = this.$container.dataset.src
+            this.audioContainer.classList.add('video__container', 'js-videoPlayer')
+            this.iconDocument.appendChild(this.audioContainer)
+            playersAudio.push(new MusicPlayer(this.iconDocument,this.audioContainer))
+
+            // Create inside subtitle
+            this.documentSubtitle = document.createElement('h2')
+            this.documentSubtitle.classList.add('icon__subtitle')
+            this.documentSubtitle.textContent = `${this.$container.dataset.subtitle}`
+            this.iconDocument.appendChild(this.documentSubtitle)
         }
     }
 
@@ -660,7 +666,7 @@ class MusicPlayer
     {
         // Create button container
         this.$buttonContainer = document.createElement('div')
-        this.$buttonContainer.classList.add('button__container')
+        this.$buttonContainer.classList.add('button__container', 'audio')
         this.$container.appendChild(this.$buttonContainer)
 
         // Pause play button
@@ -685,16 +691,20 @@ class MusicPlayer
         this.$seek.appendChild(this.$fill)
 
         // Create time
-        this.$currentTime = document.createElement('p')
-        this.$currentTime.classList.add('time')
-        this.$currentTime.textContent = '0:00'
-        this.$buttonContainer.appendChild(this.$currentTime)
+        this.$currentTimeContainer = document.querySelector('.audio__time')
+        this.$currentTime = document.createElement('span')
+        this.$currentTime.textContent = `(0:00)`
+        this.$currentTimeContainer.appendChild(this.$currentTime)
         
         // Create volume
+        this.$volumeContainer = document.createElement('div')
+        this.$volumeContainer.classList.add('volume')
+        this.$buttonContainer.appendChild(this.$volumeContainer)
+
         this.$volume = document.createElement('img')
         this.$volume.src = 'images/iconVolume_player.png'
-        this.$volume.classList.add('volume')
-        this.$buttonContainer.appendChild(this.$volume)
+        this.$volume.classList.add('volume--image')
+        this.$volumeContainer.appendChild(this.$volume)
     }
 
     playerEvent()
@@ -767,7 +777,7 @@ class MusicPlayer
         this.$audio.currentTime = this.time
         const scale = this.$audio.currentTime / this.$audio.duration * 100
         this.$fill.style.transform = `translateX(${scale - 100}%)`
-        this.$currentTime.textContent = `${Math.floor(this.$audio.currentTime/60)}:${leadingZeroTime(this.$audio.currentTime%60)}`
+        this.$currentTime.textContent = ` (${Math.floor(this.$audio.currentTime/60)}:${leadingZeroTime(this.$audio.currentTime%60)})`
 
         if(!this.$pause.classList.contains('appear'))
         {
@@ -791,12 +801,13 @@ class MusicPlayer
     }
 }
 
-let players = []
+let playersVideo = []
+let playersAudio = []
 
 const loop = () => 
 {
     window.requestAnimationFrame(loop)
-    for($player of players)
+    for($player of playersVideo)
     {
         if(!$player.$video.paused)
         {
@@ -804,11 +815,14 @@ const loop = () =>
             $player.$fill.style.transform = `translateX(${scale - 100}%)`
             $player.$currentTime.textContent = `${Math.floor($player.$video.currentTime/60)}:${leadingZeroTime($player.$video.currentTime%60)}`
         }
+    }
+    for($player of playersAudio)
+    {
         if(!$player.$audio.paused)
         {
             const scale = $player.$audio.currentTime / $player.$audio.duration * 100
             $player.$fill.style.transform = `translateX(${scale - 100}%)`
-            $player.$currentTime.textContent = `${Math.floor($player.$audio.currentTime/60)}:${leadingZeroTime($player.$audio.currentTime%60)}`
+            $player.$currentTime.textContent = ` (${Math.floor($player.$audio.currentTime/60)}:${leadingZeroTime($player.$audio.currentTime%60)})`
         }
     }
 }
