@@ -414,15 +414,17 @@ class Icon
             new ButtonClose(this.iconDocumentClose,this.iconActionContainer)
 
             // Create text container
-            this.textContainer = document.createElement('div')
-            this.textContainer.classList.add('text__container')
-            this.iconDocument.appendChild(this.textContainer)
+            this.videoContainer = document.createElement('video')
+            this.videoContainer.src = 'images/video.mp4'
+            this.videoContainer.classList.add('video__container')
+            this.iconDocument.appendChild(this.videoContainer)
+            new VideoPlayer(this.iconDocument,this.videoContainer)
 
             // Create inside text
             this.documentTitle = document.createElement('h2')
             this.documentTitle.classList.add('icon__title')
             this.documentTitle.textContent = `${this.$container.dataset.title}`
-            this.textContainer.appendChild(this.documentTitle)
+            this.iconDocument.appendChild(this.documentTitle)
         }
     }
 
@@ -433,6 +435,69 @@ class Icon
             () =>
             {
                 this.iconActionContainer.classList.add('open')
+            }
+        )
+    }
+}
+// Class player Video
+class VideoPlayer
+{
+    constructor($container,$video)
+    {
+        this.$container = $container
+        this.$video = $video
+
+        this.createPlayer()
+        this.playerEvent()
+    }
+
+    createPlayer()
+    {
+        // Create button container
+        this.$buttonContainer = document.createElement('div')
+        this.$buttonContainer.classList.add('button__container')
+        this.$container.appendChild(this.$buttonContainer)
+
+        // Pause play button
+        this.$play = document.createElement('img')
+        this.$play.src = 'images/iconPlay_player.png'
+        this.$play.classList.add('play', 'appear')
+        this.$buttonContainer.appendChild(this.$play)
+
+        this.$pause = document.createElement('img')
+        this.$pause.src = 'images/iconpause_player.png'
+        this.$pause.classList.add('pause')
+        this.$buttonContainer.appendChild(this.$pause)
+
+        // Create seek bar
+        this.$seek = document.createElement('div')
+        this.$seek.classList.add('seek')
+        this.$buttonContainer.appendChild(this.$seek)
+
+        this.$fill = document.createElement('div')
+        this.$fill.classList.add('fill')
+        this.$seek.appendChild(this.$fill)
+    }
+
+    playerEvent()
+    {
+        this.$play.addEventListener(
+            'click',
+            () =>
+            {
+                this.$video.play()
+                this.$play.classList.toggle('appear')
+                this.$pause.classList.toggle('appear')
+            }
+        )
+
+        this.$pause.addEventListener(
+            'click',
+            () =>
+            {
+                this.$video.pause()
+                this.$play.classList.toggle('appear')
+                this.$pause.classList.toggle('appear')
             }
         )
     }
