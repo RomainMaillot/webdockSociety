@@ -380,6 +380,7 @@
 .icon
 {
     width: 80px;
+    height: 80px;
     opacity: 0.5;
     transition: opacity 0.3s;
     will-change: opacity;
@@ -387,19 +388,29 @@
     z-index: 11;
     background: #412057;
     border-radius: 50%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 .icon.history
 {
     width: 40px;
+    height: auto;
     background: none;
     border-radius: 0;
 }
 
-h2.icon
+.icon .iconImage
+{
+    width: 80px;
+    height: 80px;
+}
+
+h2.icon__inner
 {
     font-size: 3rem;
-    text-align: center;
+    margin: auto;
 }
 
 .icon:hover
@@ -419,7 +430,8 @@ h2.icon
     z-index: 10;
 }
 
-.document__container.info
+.document__container.info,
+.document__container.video
 {
     background: none;
 }
@@ -445,7 +457,8 @@ h2.icon
     justify-content: center;
 }
 
-.document__container.info .document
+.document__container.info .document,
+.document__container.video .document
 {
     width: 80%;
 }
