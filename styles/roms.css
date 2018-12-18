@@ -24,11 +24,29 @@ body
     background-position: center;
 }
 
+/*
+*   Roms universe
+ */
+
 .page.page4
 {
     background: url('../images/univers_roms/fondseul.jpg');
     background-size: cover;
     background-position: center;
+}
+
+.page.page4 .characters .cheval img
+{
+    position: relative;
+    top: -30%;
+}
+
+.page.page4 .characters .guitar-player img
+{
+    position: relative;
+    /*width: 45%;*/
+    /*bottom: -98px;*/
+    left: 13%;
 }
 
 .page .content
