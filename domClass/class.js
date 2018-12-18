@@ -416,9 +416,49 @@ class Icon
             // Create text container
             this.videoContainer = document.createElement('video')
             this.videoContainer.src = 'images/video.mp4'
-            this.videoContainer.classList.add('video__container')
+            this.videoContainer.classList.add('video__container', 'js-videoPlayer')
             this.iconDocument.appendChild(this.videoContainer)
-            new VideoPlayer(this.iconDocument,this.videoContainer)
+            players.push(new VideoPlayer(this.iconDocument,this.videoContainer))
+
+            // Create inside text
+            this.documentTitle = document.createElement('h2')
+            this.documentTitle.classList.add('icon__title')
+            this.documentTitle.textContent = `${this.$container.dataset.title}`
+            this.iconDocument.appendChild(this.documentTitle)
+        }
+        if(this.$container.dataset.media == 'audio')
+        {
+            // Create Dom
+            this.icon = document.createElement('div')
+            this.icon.classList.add('icon')
+            this.$container.appendChild(this.icon)
+
+            this.iconImage = document.createElement('img')
+            this.iconImage.src = 'images/audio-icon.png'
+            this.iconImage.classList.add('iconImage')
+            this.icon.appendChild(this.iconImage)
+
+            // Create Dom action
+            this.iconActionContainer = document.createElement('div')
+            this.iconActionContainer.classList.add('document__container', 'audio')
+            this.$container.appendChild(this.iconActionContainer)
+
+            this.iconDocument = document.createElement('div')
+            this.iconDocument.classList.add('document')
+            this.iconActionContainer.appendChild(this.iconDocument)
+
+            // Create crossClose
+            this.iconDocumentClose = document.createElement('div')
+            this.iconDocumentClose.classList.add('btn--close', 'js-button-close')
+            this.iconActionContainer.appendChild(this.iconDocumentClose)
+            new ButtonClose(this.iconDocumentClose,this.iconActionContainer)
+
+            // Create text container
+            this.audioContainer = document.createElement('audio')
+            this.audioContainer.src = 'images/audio.mp3'
+            this.audioContainer.classList.add('video__container', 'js-videoPlayer')
+            this.iconDocument.appendChild(this.audioContainer)
+            players.push(new MusicPlayer(this.iconDocument,this.audioContainer))
 
             // Create inside text
             this.documentTitle = document.createElement('h2')
@@ -473,10 +513,33 @@ class VideoPlayer
         this.$seek = document.createElement('div')
         this.$seek.classList.add('seek')
         this.$buttonContainer.appendChild(this.$seek)
+        this.seekWidth = this.$seek.offsetWidth
 
         this.$fill = document.createElement('div')
         this.$fill.classList.add('fill')
         this.$seek.appendChild(this.$fill)
+
+        this.$circle = document.createElement('div')
+        this.$circle.classList.add('circle')
+        this.$fill.appendChild(this.$circle)
+
+        // Create time
+        this.$currentTime = document.createElement('p')
+        this.$currentTime.classList.add('time')
+        this.$currentTime.textContent = '0:00'
+        this.$buttonContainer.appendChild(this.$currentTime)
+        
+        // Create volume
+        this.$volume = document.createElement('img')
+        this.$volume.src = 'images/iconVolume_player.png'
+        this.$volume.classList.add('volume')
+        this.$buttonContainer.appendChild(this.$volume)
+
+        // Create full screen
+        this.$fullScreen = document.createElement('img')
+        this.$fullScreen.src = 'images/iconAgrandir_player.png'
+        this.$fullScreen.classList.add('fullScreen')
+        this.$buttonContainer.appendChild(this.$fullScreen)
     }
 
     playerEvent()
@@ -500,5 +563,268 @@ class VideoPlayer
                 this.$pause.classList.toggle('appear')
             }
         )
+
+        this.$volume.addEventListener(
+            'click',
+            () =>
+            {
+                if(this.$video.volume != 0)
+                {
+                    this.$video.volume = 0
+                    this.$buttonContainer.classList.add('mute')
+                }
+                else
+                {
+                    this.$video.volume = 1
+                    this.$buttonContainer.classList.remove('mute')
+                }
+            }
+        )
+
+        this.$seek.addEventListener(
+            'click',
+            (_event) =>
+            {
+                this.mouseX = _event.clientX
+                this.updateSeekBar(_event)
+                this.holdAndDragTime(_event)
+            }
+        )
+
+        this.$seek.addEventListener(
+            'mousedown', 
+            (_event) => 
+            {
+                this.mouseX = _event.clientX
+                this.updateSeekBar(_event)
+                this.holdAndDragTime(_event)
+            }
+        )
+
+        this.$fullScreen.addEventListener(
+            'click', 
+            () => 
+            {
+                this.$video.webkitRequestFullScreen()
+            }
+        )
+    }
+
+    updateSeekBar(_event)
+    {
+        this.bounding = this.$seek.getBoundingClientRect()
+        this.ratio = (this.mouseX - this.bounding.left) / this.bounding.width
+        this.time = this.ratio * this.$video.duration
+
+        this.$video.play()
+        this.$video.currentTime = this.time
+        const scale = this.$video.currentTime / this.$video.duration * 100
+        this.$fill.style.transform = `translateX(${scale - 100}%)`
+        this.$currentTime.textContent = `${Math.floor(this.$video.currentTime/60)}:${leadingZeroTime(this.$video.currentTime%60)}`
+
+        if(!this.$pause.classList.contains('appear'))
+        {
+            this.$play.classList.toggle('appear')
+            this.$pause.classList.toggle('appear')
+        }
+    }
+
+    holdAndDragTime(_event)
+    {
+        this.mouseX = _event.clientX
+        _event.preventDefault()
+        this.$seek.addEventListener('mousemove', this.updateSeekBar(_event))
+        this.$seek.addEventListener('mouseup', () =>
+        {
+            if(this.$play.classList.contains('appear')){
+                this.$video.play()
+            }
+            this.$seek.removeEventListener('mousemove', this.updateSeekBar())
+        })
     }
 }
+
+// Class player Music
+class MusicPlayer
+{
+    constructor($container,$audio)
+    {
+        this.$container = $container
+        this.$audio = $audio
+
+        this.createPlayer()
+        this.playerEvent()
+    }
+
+    createPlayer()
+    {
+        // Create button container
+        this.$buttonContainer = document.createElement('div')
+        this.$buttonContainer.classList.add('button__container')
+        this.$container.appendChild(this.$buttonContainer)
+
+        // Pause play button
+        this.$play = document.createElement('img')
+        this.$play.src = 'images/iconPlay_player.png'
+        this.$play.classList.add('play', 'appear')
+        this.$buttonContainer.appendChild(this.$play)
+
+        this.$pause = document.createElement('img')
+        this.$pause.src = 'images/iconpause_player.png'
+        this.$pause.classList.add('pause')
+        this.$buttonContainer.appendChild(this.$pause)
+
+        // Create seek bar
+        this.$seek = document.createElement('div')
+        this.$seek.classList.add('seek')
+        this.$buttonContainer.appendChild(this.$seek)
+        this.seekWidth = this.$seek.offsetWidth
+
+        this.$fill = document.createElement('div')
+        this.$fill.classList.add('fill')
+        this.$seek.appendChild(this.$fill)
+
+        // Create time
+        this.$currentTime = document.createElement('p')
+        this.$currentTime.classList.add('time')
+        this.$currentTime.textContent = '0:00'
+        this.$buttonContainer.appendChild(this.$currentTime)
+        
+        // Create volume
+        this.$volume = document.createElement('img')
+        this.$volume.src = 'images/iconVolume_player.png'
+        this.$volume.classList.add('volume')
+        this.$buttonContainer.appendChild(this.$volume)
+    }
+
+    playerEvent()
+    {
+        this.$play.addEventListener(
+            'click',
+            () =>
+            {
+                this.$audio.play()
+                this.$play.classList.toggle('appear')
+                this.$pause.classList.toggle('appear')
+            }
+        )
+
+        this.$pause.addEventListener(
+            'click',
+            () =>
+            {
+                this.$audio.pause()
+                this.$play.classList.toggle('appear')
+                this.$pause.classList.toggle('appear')
+            }
+        )
+
+        this.$volume.addEventListener(
+            'click',
+            () =>
+            {
+                if(this.$audio.volume != 0)
+                {
+                    this.$audio.volume = 0
+                    this.$buttonContainer.classList.add('mute')
+                }
+                else
+                {
+                    this.$audio.volume = 1
+                    this.$buttonContainer.classList.remove('mute')
+                }
+            }
+        )
+
+        this.$seek.addEventListener(
+            'click',
+            (_event) =>
+            {
+                this.mouseX = _event.clientX
+                this.updateSeekBar(_event)
+                this.holdAndDragTime(_event)
+            }
+        )
+
+        this.$seek.addEventListener(
+            'mousedown', 
+            (_event) => 
+            {
+                this.mouseX = _event.clientX
+                this.updateSeekBar(_event)
+                this.holdAndDragTime(_event)
+            }
+        )
+    }
+
+    updateSeekBar(_event)
+    {
+        this.bounding = this.$seek.getBoundingClientRect()
+        this.ratio = (this.mouseX - this.bounding.left) / this.bounding.width
+        this.time = this.ratio * this.$audio.duration
+
+        this.$audio.play()
+        this.$audio.currentTime = this.time
+        const scale = this.$audio.currentTime / this.$audio.duration * 100
+        this.$fill.style.transform = `translateX(${scale - 100}%)`
+        this.$currentTime.textContent = `${Math.floor(this.$audio.currentTime/60)}:${leadingZeroTime(this.$audio.currentTime%60)}`
+
+        if(!this.$pause.classList.contains('appear'))
+        {
+            this.$play.classList.toggle('appear')
+            this.$pause.classList.toggle('appear')
+        }
+    }
+
+    holdAndDragTime(_event)
+    {
+        this.mouseX = _event.clientX
+        _event.preventDefault()
+        this.$seek.addEventListener('mousemove', this.updateSeekBar(_event))
+        this.$seek.addEventListener('mouseup', () =>
+        {
+            if(this.$play.classList.contains('appear')){
+                this.$audio.play()
+            }
+            this.$seek.removeEventListener('mousemove', this.updateSeekBar())
+        })
+    }
+}
+
+let players = []
+
+const loop = () => 
+{
+    window.requestAnimationFrame(loop)
+    for($player of players)
+    {
+        if(!$player.$video.paused)
+        {
+            const scale = $player.$video.currentTime / $player.$video.duration * 100
+            $player.$fill.style.transform = `translateX(${scale - 100}%)`
+            $player.$currentTime.textContent = `${Math.floor($player.$video.currentTime/60)}:${leadingZeroTime($player.$video.currentTime%60)}`
+        }
+        if(!$player.$audio.paused)
+        {
+            const scale = $player.$audio.currentTime / $player.$audio.duration * 100
+            $player.$fill.style.transform = `translateX(${scale - 100}%)`
+            $player.$currentTime.textContent = `${Math.floor($player.$audio.currentTime/60)}:${leadingZeroTime($player.$audio.currentTime%60)}`
+        }
+    }
+}
+
+// Function to add Leading zeros for the current time and time
+const leadingZeroTime = (time) =>
+{
+    var result
+    // if time is less than 10s, then add a leading zero
+    if(time<10){
+        result = `0${Math.floor(time)}`
+    }
+    else{
+        result = Math.floor(time)
+    }
+    return result
+}
+
+loop()
