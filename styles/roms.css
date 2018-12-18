@@ -107,8 +107,6 @@ body
 
 .main__map
 {
-    width: 45%;
-    height: 45%;
     align-self: center;
 }
 
@@ -127,121 +125,37 @@ body
     align-content: center;
 }
 
-/* First block on the left of the map */
-
-.main__block.first {
-    top: 32%;
-    width: 45%;
-    left: 12%;
-}
-
-.main__block.first .circle
-{
-    position: relative;
-}
-
-.block__first__h2
-{
-    align-self: center;
-    font-size: 21px;
-    font-family: "Bodoni"
-}
-
-.block__first__text
+.block__text
 {
     margin: 0;
     align-self: center;
     font-size: 20px;
     width: 45%;
+    padding-left: 35px;
+    font-family: 'Lato', sans-serif;
 }
 
-/* Second block on the left of the map */
-
-.main__block.second {
-    top: 48%;
-    width: 45%;
-    left: 12%;
-}
-
-.main__block.second .circle
+.map__text__title
 {
-    position: relative;
-}
-
-.block__second__h2
-{
-    align-self: center;
-    font-size: 33px;
+    position: absolute;
+    top: 18%;
+    left: 20%;
+    font-size: 27px;
     font-family: "Bodoni"
 }
 
-.block__second__text
+.map__text__title::before
 {
-    margin: 0;
-    align-self: center;
-    font-size: 20px;
-    width: 45%;
+    content: '';
+    position: absolute;
+    background: white;
+    width: 165px;
+    height: 3px;
+    top: 170%;
+    left: 24%;
 }
 
-/* Third block on the left of the map */
-
-.main__block.third {
-    top: 64%;
-    width: 45%;
-    left: 12%;
-}
-
-.main__block.third .circle
-{
-    position: relative;
-}
-
-.block__third__h2
-{
-    align-self: center;
-    font-size: 33px;
-    font-family: "Bodoni"
-}
-
-.block__third__text
-{
-    margin: 0;
-    align-self: center;
-    font-size: 20px;
-    width: 45%;
-}
-
-/* Fourth block on the left of the map */
-
-.main__block.fourth {
-    top: 80%;
-    width: 45%;
-    left: 12%;
-}
-
-.main__block.fourth .circle
-{
-    position: relative;
-}
-
-.block__fourth__h2
-{
-    align-self: center;
-    font-size: 33px;
-    font-family: "Bodoni"
-}
-
-.block__fourth__text
-{
-    margin: 0;
-    align-self: center;
-    font-size: 20px;
-    width: 45%;
-}
-
-/* Map Roms */
-
-.circle
+.circle__betes
 {
     position: absolute;
     display: flex;
@@ -253,6 +167,88 @@ body
     width: 100px;
     height: 100px;
 }
+
+/* First block on the left of the map */
+
+.main__block.first {
+    top: 32%;
+    width: 45%;
+    left: 16%;
+}
+
+.main__block.first .circle__betes
+{
+    position: relative;
+}
+
+.block__first__h2
+{
+    align-self: center;
+    font-size: 21px;
+    font-family: "Bodoni"
+}
+
+/* Second block on the left of the map */
+
+.main__block.second {
+    top: 48%;
+    width: 45%;
+    left: 16%;
+}
+
+.main__block.second .circle__betes
+{
+    position: relative;
+}
+
+.block__second__h2
+{
+    align-self: center;
+    font-size: 33px;
+    font-family: "Bodoni"
+}
+
+/* Third block on the left of the map */
+
+.main__block.third {
+    top: 64%;
+    width: 45%;
+    left: 16%;
+}
+
+.main__block.third .circle__betes
+{
+    position: relative;
+}
+
+.block__third__h2
+{
+    align-self: center;
+    font-size: 28px;
+    font-family: "Bodoni"
+}
+
+/* Fourth block on the left of the map */
+
+.main__block.fourth {
+    top: 80%;
+    width: 45%;
+    left: 16%;
+}
+
+.main__block.fourth .circle__betes
+{
+    position: relative;
+}
+
+.block__fourth__h2
+{
+    align-self: center;
+    font-size: 37px;
+    font-family: "Bodoni"
+}
+
+/* Map Roms */
 
 .main__first
 {
