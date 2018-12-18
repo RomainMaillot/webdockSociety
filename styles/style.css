@@ -13,6 +13,11 @@ body
 
 .preloader
 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: rgba(62,30,83, 0.8);
     height: 100vh;
     color: white;
@@ -41,15 +46,30 @@ body
 .preloader .top--preloader .preloader__percentage
 {
     font-size: 1.5rem;
+    font-family: "Bodoni Roman", sans-serif;
+    position: absolute;
+    margin-top: -3.5%;
 }
 
 .preloader .top--preloader .preloader__sentence
 {
-    font-size: 2.5rem;
+    font-size: 1.2rem;
+    font-family: "Bodoni Roman", sans-serif;
+}
+
+.preloader .bottom--preloader
+{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .preloader .bottom--preloader .line
 {
+    display: flex;
+    justify-content: center;
     opacity: 0.4;
 }
 
@@ -58,7 +78,13 @@ body
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 1300px;
+}
+
+.preloader .bottom--preloader .preloader__icons .icon
+{
+    font-size: 3rem;
+    cursor: default;
+    font-family: 'Lato', sans-serif;
 }
 
 .preloader .bottom--preloader img
@@ -71,6 +97,13 @@ body
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.preloader .bottom--preloader .preloader__text p
+{
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    font-size: 1rem;
 }
 
 .container
@@ -188,6 +221,13 @@ nav ul.topnav li a img
     font-family: "Bodoni";
     font-weight: bold;
     src: url('../fonts/BodoniFLF-Bold.ttf');
+}
+
+@font-face
+{
+    font-family: "Bodoni Roman";
+    font-style: normal;
+    src: url('../fonts/BodoniFLF-Roman.ttf')
 }
 
 p
