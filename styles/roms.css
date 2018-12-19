@@ -7,20 +7,6 @@ body
     color: white;
 }
 
-@font-face
-{
-    font-family: "Bodoni";
-    font-weight: bold;
-    src: url('../fonts/BodoniFLF-Bold.ttf');
-}
-
-@font-face
-{
-    font-family: "Bodoni Roman";
-    font-style: normal;
-    src: url('../fonts/BodoniFLF-Roman.ttf')
-}
-
 span.strong
 {
     font-weight: bold;
@@ -49,6 +35,11 @@ span.strong
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.page.page4
+{
+    background: #4f4f4f;
 }
 
 /*
@@ -85,32 +76,32 @@ span.strong
     left: 0;
 }
 
-.page.page4
+.page.page5
 {
     background: url('../images/univers_roms/roms_bg.jpg');
     background-size: cover;
     /*background-position: center;*/
 }
 
-.page.page4 .characters .cheval
+.page.page5 .characters .cheval
 {
     position: absolute;
     top: -10%;
 }
 
-.page.page4 .characters .cheval .icon1 .icon
+.page.page5 .characters .cheval .icon1 .icon
 {
     top: 60%;
     left: 20%;
 }
 
-.page.page4 .characters .cheval .icon2 .icon
+.page.page5 .characters .cheval .icon2 .icon
 {
     top: 60%;
     left: 30%;
 }
 
-.page.page4 .characters .cheval .icon3 .icon
+.page.page5 .characters .cheval .icon3 .icon
 {
     top: 25%;
     left: 65%;
@@ -121,135 +112,135 @@ span.strong
     font-size: 1rem;
 }
 
-.page.page4 .characters .cheval .image
+.page.page5 .characters .cheval .image
 {
     width: 50vw;
 }
 
-.page.page4 .characters .dancer
+.page.page5 .characters .dancer
 {
     position: absolute;
     top: 10%;
     right: 10%;
 }
 
-.page.page4 .characters .dancer .icon1 .icon
+.page.page5 .characters .dancer .icon1 .icon
 {
     top: 20%;
     left: 65%;
 }
 
-.page.page4 .characters .dancer .icon2 .icon
+.page.page5 .characters .dancer .icon2 .icon
 {
     top: 20%;
     left: 85%;
 }
 
-.page.page4 .characters .dancer .image
+.page.page5 .characters .dancer .image
 {
     width: 23vw;
 }
 
-.page.page4 .characters .guitar-player
+.page.page5 .characters .guitar-player
 {
     position: absolute;
     bottom: 15%;
     left: 20%;
 }
 
-.page.page4 .characters .guitar-player .icon1 .icon
+.page.page5 .characters .guitar-player .icon1 .icon
 {
     top: 30%;
     left: 75%;
 }
 
-.page.page4 .characters .guitar-player .icon2 .icon
+.page.page5 .characters .guitar-player .icon2 .icon
 {
     top: 30%;
     left: 85%;
 }
 
-.page.page4 .characters .guitar-player .icon3 .icon
+.page.page5 .characters .guitar-player .icon3 .icon
 {
     top: 30%;
     left: 95%;
 }
 
-.page.page4 .characters .guitar-player .image
+.page.page5 .characters .guitar-player .image
 {
     width: 50vw;
 }
 
-.page.page4 .characters .black-smith
+.page.page5 .characters .black-smith
 {
     position: absolute;
     right: -10%;
     bottom: 20%;
 }
 
-.page.page4 .characters .black-smith .icon1 .icon
+.page.page5 .characters .black-smith .icon1 .icon
 {
     top: 30%;
     left: -5%;
 }
 
-.page.page4 .characters .black-smith .icon2 .icon
+.page.page5 .characters .black-smith .icon2 .icon
 {
     top: 30%;
     left: 10%;
 }
 
-.page.page4 .characters .black-smith .image
+.page.page5 .characters .black-smith .image
 {
     width: 30vw;
 }
 
-.page.page5
+.page.page6
 {
     background: url('../images/univers_roms/roms_bg.jpg');
     background-size: cover;
     background-position: center;
 }
 
-.page.page5 .characters .back-family
+.page.page6 .characters .back-family
 {
     position: absolute;
     top: 8%;
     left: 5%;
 }
 
-.page.page5 .characters .back-family .icon1 .icon
+.page.page6 .characters .back-family .icon1 .icon
 {
     top: 20%;
     left: 65%;
 }
 
-.page.page5 .characters .front-family
+.page.page6 .characters .front-family
 {
     position: absolute;
     bottom: -3%;
     left: 15%;
 }
 
-.page.page5 .characters .front-family .icon1 .icon
+.page.page6 .characters .front-family .icon1 .icon
 {
     top: 60%;
     left: 50%;
 }
 
-.page.page5 .characters .front-family .icon2 .icon
+.page.page6 .characters .front-family .icon2 .icon
 {
     top: 60%;
     left: 60%;
 }
 
-.page.page5 .characters .front-family .icon3 .icon
+.page.page6 .characters .front-family .icon3 .icon
 {
     top: 60%;
     left: 70%;
 }
 
-.page.page5 .characters .mother
+.page.page6 .characters .mother
 {
     position: absolute;
     top: -9%;
@@ -257,7 +248,7 @@ span.strong
     width: 35vw;
 }
 
-.page.page5 .characters .mother .icon1 .icon
+.page.page6 .characters .mother .icon1 .icon
 {
     top: 10%;
     left: 55%;
@@ -282,7 +273,7 @@ span.strong
     font-size: 3rem;
     align-self: center;
     text-transform: uppercase;
-    font-family: "Bodoni", sans-serif;
+    font-family: "Bodoni";
 }
 
 .page__header a img
@@ -320,7 +311,7 @@ span.strong
     width: 50%;
     text-align: center;
     align-self: center;
-    font-family: "Bodoni Roman", sans-serif;
+    font-family: "Bodoni-Book", sans-serif;
 }
 
 .page__main .page__final
@@ -329,7 +320,7 @@ span.strong
     width: 50%;
     text-align: center;
     align-self: center;
-    font-family: "Bodoni Roman", sans-serif;
+    font-family: "Bodoni-Book", sans-serif;
     position: relative;
 }
 
@@ -358,6 +349,106 @@ span.strong
 {
     font-family: "Bodoni Roman", sans-serif;
 }
+
+/* Instruction page before the panorama */
+
+.preloader
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.preloader .top--preloader
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 5s;
+}
+
+.preloader .top--preloader .preloader__logo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader .top--preloader .preloader__logo img
+{
+    width: 15%;
+}
+
+.preloader .top--preloader .preloader__percentage
+{
+    font-size: 1.5rem;
+    font-family: "Bodoni Roman", sans-serif;
+    position: absolute;
+    margin-top: -3.5%;
+}
+
+.preloader .top--preloader .preloader__sentence
+{
+    font-size: 1.2rem;
+    margin-top: 4%;
+}
+
+.preloader .bottom--preloader
+{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: center;
+    margin: 0 auto;
+    animation: fadeIn 5s;
+}
+
+.preloader .bottom--preloader .line
+{
+    display: flex;
+    justify-content: center;
+    opacity: 0.4;
+}
+
+.preloader .bottom--preloader .preloader__icons
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.preloader .bottom--preloader .preloader__icons .icon__logo
+{
+    font-size: 3rem;
+    cursor: default;
+    font-family: 'Lato', sans-serif;
+}
+
+.preloader .bottom--preloader img
+{
+    width: 10%;
+}
+
+.preloader .bottom--preloader .preloader__text
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.preloader .bottom--preloader .preloader__text p
+{
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+/* Map page 3 */
 
 .main__mask
 {
@@ -782,4 +873,24 @@ span.strong
     font-size: 17px;
     left: 0%;
     top: 59%;
+}
+
+@font-face
+{
+    font-family: "Bodoni";
+    font-weight: bold;
+    src: url('../fonts/BodoniFLF-Bold.ttf');
+}
+
+@font-face
+{
+    font-family: "Bodoni Roman";
+    font-style: normal;
+    src: url('../fonts/BodoniFLF-Roman.ttf')
+}
+
+@font-face
+{
+    font-family: "Bodoni-Book";
+    src: url('../fonts/BodoniStd-Book.otf');
 }
