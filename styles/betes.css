@@ -19,13 +19,6 @@ body
     line-height: 22px;
 }
 
-@font-face
-{
-    font-family: "Bodoni";
-    font-weight: bold;
-    src: url('../fonts/BodoniFLF-Bold.ttf');
-}
-
 span.strong
 {
     font-weight: bold;
@@ -120,7 +113,7 @@ span.strong
     width: 50%;
     text-align: center;
     align-self: center;
-    font-family: "Bodoni", sans-serif;
+    font-family: "Bodoni-Book";
 }
 
 .main__mask
@@ -184,7 +177,7 @@ span.strong
     top: 18%;
     left: 20%;
     font-size: 27px;
-    font-family: "Bodoni"
+    font-family: "Bodoni-Book"
 }
 
 .map__text__title::before
@@ -202,7 +195,7 @@ span.strong
 {
     align-self: flex-end;
     font-size: 27px;
-    font-family: "Bodoni";
+    font-family: "Bodoni-Book";
     margin: 0;
 }
 
@@ -780,4 +773,17 @@ span.strong
     font-size: 17px;
     left: 0;
     top: 59%;
+}
+
+@font-face
+{
+    font-family: "Bodoni";
+    font-weight: bold;
+    src: url('../fonts/BodoniFLF-Bold.ttf');
+}
+
+@font-face
+{
+    font-family: "Bodoni-Book";
+    src: url('../fonts/BodoniStd-Book.otf');
 }
