@@ -5,7 +5,6 @@ const $aboutOpen = document.querySelector('.aboutus--open')
 const $about = document.querySelector('.js-about')
 const $closeButton = document.querySelectorAll('.js-button-close')
 
-
 for(const $button of $buttons)
 {
     const button = new Button($button)
