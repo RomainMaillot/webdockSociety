@@ -26,7 +26,8 @@ span.strong
 
 /* HEADER */
 
-.page.page1
+.page.page1,
+.page.page6
 {
     background: url('../images/backgrounds/Fond.jpg');
     background-size: cover;
@@ -114,6 +115,37 @@ span.strong
     text-align: center;
     align-self: center;
     font-family: "Bodoni-Book";
+}
+
+.page__main .page__final
+{
+    font-size: 1.8rem;
+    width: 50%;
+    text-align: center;
+    align-self: center;
+    font-family: "Bodoni Roman", sans-serif;
+    position: relative;
+}
+
+.page__main .page__final::before,
+.page__main .page__final::after
+{
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    left: 10%;
+    background: white;
+}
+
+.page__main .page__final::before
+{
+    top: -15%;
+}
+
+.page__main .page__final::after
+{
+    bottom: -15%;
 }
 
 .main__mask
