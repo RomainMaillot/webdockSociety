@@ -7,7 +7,7 @@ page = new Pages($pages)
 const $buttons = document.querySelectorAll('.js-button')
 const $menu = document.querySelector('.js-menu')
 const $menuButton = document.querySelector('.btn-menu')
-const $instructionsOpen = document.querySelector('.instructions--open')
+const $instructionsOpens = document.querySelectorAll('.instructions--open')
 const $instructions = document.querySelector('.js-instructions')
 const $closeButton = document.querySelectorAll('.js-button-close')
 
