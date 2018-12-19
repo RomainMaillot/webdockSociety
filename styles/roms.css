@@ -14,6 +14,13 @@ body
     src: url('../fonts/BodoniFLF-Bold.ttf');
 }
 
+@font-face
+{
+    font-family: "Bodoni Roman";
+    font-style: normal;
+    src: url('../fonts/BodoniFLF-Roman.ttf')
+}
+
 span.strong
 {
     font-weight: bold;
@@ -22,7 +29,8 @@ span.strong
 /* HEADER */
 
 .page.page1,
-.page.page2
+.page.page2,
+.page.page7
 {
     background: url('../images/background_page_roms.jpg');
     background-size: cover;
@@ -312,7 +320,43 @@ span.strong
     width: 50%;
     text-align: center;
     align-self: center;
-    font-family: "Bodoni", sans-serif;
+    font-family: "Bodoni Roman", sans-serif;
+}
+
+.page__main .page__final
+{
+    font-size: 1.8rem;
+    width: 50%;
+    text-align: center;
+    align-self: center;
+    font-family: "Bodoni Roman", sans-serif;
+    position: relative;
+}
+
+.page__main .page__final::before,
+.page__main .page__final::after
+{
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    left: 10%;
+    background: white;
+}
+
+.page__main .page__final::before
+{
+    top: -15%;
+}
+
+.page__main .page__final::after
+{
+    bottom: -15%;
+}
+
+.text__container .icon__title
+{
+    font-family: "Bodoni Roman", sans-serif;
 }
 
 .main__mask
