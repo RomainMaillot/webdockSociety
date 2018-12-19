@@ -20,10 +20,13 @@ for(const $button of $closeButton)
     const button = new ButtonClose($button,$instructions)
 }
 
-$instructionsOpen.addEventListener(
-    'click',
-    () =>
-    {
-        $instructions.classList.toggle('open')
-    }
-)
+for(const $instructionsOpen of $instructionsOpens)
+{
+    $instructionsOpen.addEventListener(
+        'click',
+        () =>
+        {
+            $instructions.classList.toggle('open')
+        }
+    )
+}
