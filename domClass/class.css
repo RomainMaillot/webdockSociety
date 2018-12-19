@@ -635,6 +635,7 @@ h2.icon__inner
     left: 5%;
     top: 35%;
     overflow-x: hidden;
+    cursor: pointer;
 }
 
 .button__container .seek .fill
