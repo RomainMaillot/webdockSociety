@@ -14,6 +14,11 @@ body
     src: url('../fonts/BodoniFLF-Bold.ttf');
 }
 
+span.strong
+{
+    font-weight: bold;
+}
+
 /* HEADER */
 
 .page.page1,
@@ -24,6 +29,20 @@ body
     background-position: center;
 }
 
+.page.page3 .icon
+{
+    position: absolute;
+    right: 5%;
+    top: 15%;
+}
+
+.page.page3 .document__container
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 /*
 *   Roms universe
  */
@@ -32,7 +51,30 @@ body
 {
     display: flex;
     flex-direction: row;
-    /*background: rgba(62,30,83, 0.2);*/
+    /* background: rgba(62,30,83, 0.2); */
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.characters .icon
+{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+
+.characters .icon .iconImage
+{
+    width: 40px;
+    height: 40px;
+}
+
+.characters .document__container
+{
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .page.page4
@@ -42,34 +84,116 @@ body
     /*background-position: center;*/
 }
 
-.page.page4 .characters .cheval img
+.page.page4 .characters .cheval
 {
-    position: relative;
-    margin-top: -16%;
-    width: 55vw;
+    position: absolute;
+    top: -10%;
 }
 
-.page.page4 .characters .dancer img
+.page.page4 .characters .cheval .icon1 .icon
 {
-    position: relative;
-    left: -6%;
+    top: 60%;
+    left: 20%;
+}
+
+.page.page4 .characters .cheval .icon2 .icon
+{
+    top: 60%;
+    left: 30%;
+}
+
+.page.page4 .characters .cheval .icon3 .icon
+{
+    top: 25%;
+    left: 65%;
+}
+
+.icon h2
+{
+    font-size: 1rem;
+}
+
+.page.page4 .characters .cheval .image
+{
+    width: 50vw;
+}
+
+.page.page4 .characters .dancer
+{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+
+.page.page4 .characters .dancer .icon1 .icon
+{
+    top: 20%;
+    left: 65%;
+}
+
+.page.page4 .characters .dancer .icon2 .icon
+{
+    top: 20%;
+    left: 85%;
+}
+
+.page.page4 .characters .dancer .image
+{
     width: 23vw;
-    bottom: -5%;
 }
 
-.page.page4 .characters .guitar-player img
+.page.page4 .characters .guitar-player
 {
-    position: relative;
-    width: 55vw;
-    bottom: -20%;
-    left: -110%;
+    position: absolute;
+    bottom: 15%;
+    left: 20%;
 }
 
-.page.page4 .characters .black-smith img
+.page.page4 .characters .guitar-player .icon1 .icon
 {
-    position: relative;
-    bottom: -23%;
-    left: -155%;
+    top: 30%;
+    left: 75%;
+}
+
+.page.page4 .characters .guitar-player .icon2 .icon
+{
+    top: 30%;
+    left: 85%;
+}
+
+.page.page4 .characters .guitar-player .icon3 .icon
+{
+    top: 30%;
+    left: 95%;
+}
+
+.page.page4 .characters .guitar-player .image
+{
+    width: 50vw;
+}
+
+.page.page4 .characters .black-smith
+{
+    position: absolute;
+    right: -10%;
+    bottom: 20%;
+}
+
+.page.page4 .characters .black-smith .icon1 .icon
+{
+    top: 30%;
+    left: -5%;
+}
+
+.page.page4 .characters .black-smith .icon2 .icon
+{
+    top: 30%;
+    left: 10%;
+}
+
+.page.page4 .characters .black-smith .image
+{
+    width: 30vw;
 }
 
 .page.page5
@@ -79,25 +203,56 @@ body
     background-position: center;
 }
 
-.page.page5 .characters .back-family img
+.page.page5 .characters .back-family
 {
-    position: relative;
+    position: absolute;
     top: 8%;
-    left: 25%;
+    left: 5%;
 }
 
-.page.page5 .characters .front-family img
+.page.page5 .characters .back-family .icon1 .icon
 {
-    position: relative;
+    top: 20%;
+    left: 65%;
+}
+
+.page.page5 .characters .front-family
+{
+    position: absolute;
     bottom: -3%;
+    left: 15%;
 }
 
-.page.page5 .characters .mother img
+.page.page5 .characters .front-family .icon1 .icon
 {
-    position: relative;
+    top: 60%;
+    left: 50%;
+}
+
+.page.page5 .characters .front-family .icon2 .icon
+{
+    top: 60%;
+    left: 60%;
+}
+
+.page.page5 .characters .front-family .icon3 .icon
+{
+    top: 60%;
+    left: 70%;
+}
+
+.page.page5 .characters .mother
+{
+    position: absolute;
     top: -9%;
-    right: 12%;
+    right: 0;
     width: 35vw;
+}
+
+.page.page5 .characters .mother .icon1 .icon
+{
+    top: 10%;
+    left: 55%;
 }
 
 .page .content
