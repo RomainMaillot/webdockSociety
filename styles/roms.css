@@ -725,6 +725,7 @@ span.strong
     text-transform: uppercase;
     text-decoration: none;
     color: white;
+    font-family: "Bodoni", sans-serif;
 }
 
 .topnav--left
