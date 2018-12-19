@@ -7,6 +7,18 @@ body
     color: white;
 }
 
+.icon__title
+{
+    font-family: "Bodoni";
+}
+
+.icon__text
+{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    line-height: 22px;
+}
+
 @font-face
 {
     font-family: "Bodoni";
@@ -465,6 +477,7 @@ span.strong
     text-transform: uppercase;
     text-decoration: none;
     color: white;
+    font-family: "Bodoni";
 }
 
 .topnav--left
