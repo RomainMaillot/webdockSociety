@@ -72,6 +72,34 @@ body
     left: -155%;
 }
 
+.page.page5
+{
+    background: url('../images/univers_roms/fondseul.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.page.page5 .characters .back-family img
+{
+    position: relative;
+    top: 5%;
+    left: 25%;
+}
+
+.page.page5 .characters .front-family img
+{
+    position: relative;
+    bottom: -3%;
+}
+
+.page.page5 .characters .mother img
+{
+    position: relative;
+    top: -9%;
+    right: 12%;
+    width: 35vw;
+}
+
 .page .content
 {
     background: #3E1E5380;
