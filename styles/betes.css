@@ -833,3 +833,8 @@ span.strong
     font-family: "Bodoni-Book";
     src: url('../fonts/BodoniStd-Book.otf');
 }
+
+.document__container .icon__title
+{
+    font-family: "Bodony", sans-serif;
+}
