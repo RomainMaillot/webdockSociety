@@ -9,12 +9,13 @@ body
 .container
 {
     overflow: hidden;
-    background-image: url("../images/bg.png");
+    background-image: url("../images/sur_site/blocs_accueil_a_propos/accueil.jpg");
+    opacity: 0.8;
     background-size: cover;
     background-position: center;
     height: 100vh;
     width: 100vw;
-    color: white;  
+    color: white; 
 }
 
 .btn--main
@@ -55,12 +56,12 @@ nav ul.topnav li
 
 nav ul.topnav li.right
 {
-    width: 10%;
-    font-size: 1.2rem;
+    width: 18%;
+    font-size: 1.3rem;
     text-transform: uppercase;
     align-self: center;
-    padding-right: 2%;
     font-weight: bold;
+    font-family: "Bodoni";
 }
 
 nav ul.topnav li a
@@ -86,7 +87,7 @@ nav ul.topnav li a img
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: #41205750;
+    background-color: #41205760;
 }
 
 .sentences .btn--main
@@ -100,8 +101,8 @@ nav ul.topnav li a img
     width: 42%;
     text-align: center;
     animation: fadeIn 2s;
-    /*animation-delay: 130ms;*/
-    cursor: pointer;
+    font-family: "Bodoni-Book", sans-serif;
+    font-size: 2.3rem;
 }
 
 @keyframes fadeIn
@@ -114,19 +115,6 @@ nav ul.topnav li a img
     {
         opacity: 1;
     }
-}
-
-@font-face
-{
-    font-family: "Bodoni";
-    font-weight: bold;
-    src: url('../fonts/BodoniFLF-Bold.ttf');
-}
-
-p
-{
-    font-family: "Bodoni", sans-serif;
-    font-size: 2.3rem;
 }
 
 /* Menu */
@@ -165,7 +153,7 @@ p
     top: 0;
     left: 0;
     width: 800px;
-    height: 100%;
+    height: 95%;
     padding: 20px 60px;
     background: #251826;
     opacity: 0.95;
@@ -211,12 +199,17 @@ p
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 83%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .quotation__sign
 {
     margin: 0;
-    font-size: 90px;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
 }
 
 .quotation .quotation__text
@@ -225,6 +218,7 @@ p
     font-style: italic;
     font-size: 1.3rem;
     width: 88%;
+    margin: 0;
 }
 
 .end
@@ -269,12 +263,18 @@ p
     margin-right: 80px;
 }
 
-.footer-logos .footer-logos__img +.footer-logos__img
+.footer-logos .footer-logos__img__twitter +.footer-logos__img__insta
 {
     margin-left: 25px;
 }
 
-.footer-logos__img
+.footer-logos__img__twitter
+{
+    width: 25px;
+    height: 25px;
+}
+
+.footer-logos__img__insta
 {
     width: 25px;
     height: 25px;
@@ -285,4 +285,17 @@ p
     font-family: "Bodoni";
     font-style: italic;
     src: url('../fonts/BodoniFLF-BoldItalic.ttf')
+}
+
+@font-face
+{
+    font-family: "Bodoni";
+    font-weight: bold;
+    src: url('../fonts/BodoniFLF-Bold.ttf');
+}
+
+@font-face
+{
+    font-family: "Bodoni-Book";
+    src: url('../fonts/BodoniStd-Book.otf');
 }
