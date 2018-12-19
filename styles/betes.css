@@ -426,6 +426,42 @@ body
 *   Bétés universe
  */
 
+.page__header__panorama
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.page__header__panorama a img {
+    height: 100px
+}
+
+.topnav--right
+{
+    margin-right: 20px;
+    align-self: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+
+.topnav--left
+{
+    margin: 20px;
+}
+
+.characters
+{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 .page.page4
 {
     background: url('../images/univers_betes/fond.png');
@@ -433,9 +469,58 @@ body
     /*background-position: center;*/
 }
 
-.characters
+.page.page4 .characters .couple img
 {
-    display: flex;
-    flex-direction: row;
-    /*background: rgba(62,30,83, 0.2);*/
+    position: absolute;
+    width: 35vw;
+    left: 14%;
+    bottom: 17%;
+}
+
+.page.page4 .characters .education img
+{
+    position: absolute;
+    /*top: 32%;*/
+    width: 16vw;
+    left: 50%;
+    bottom: 38%;
+}
+
+.page.page4 .characters .dancers img
+{
+    position: absolute;
+    bottom: 16%;
+    width: 23vw;
+    left: 70%;
+}
+
+.page.page5
+{
+    background: url('../images/univers_betes/fond.png');
+    background-size: cover;
+    background-position: right;
+}
+
+.page.page5 .characters .music img
+{
+    position: absolute;
+    width: 20vw;
+    left: 10%;
+    bottom: 32%;
+}
+
+.page.page5 .characters .langage img
+{
+    position: absolute;
+    width: 18vw;
+    left: 40%;
+    bottom: 22%;
+}
+
+.page.page5 .characters .food img
+{
+    position: absolute;
+    bottom: 18%;
+    width: 23vw;
+    right: 7%;
 }
