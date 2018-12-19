@@ -421,3 +421,21 @@ body
     font-weight: lighter;
     font-size: 1rem;
 }
+
+/*
+*   Bétés universe
+ */
+
+.page.page4
+{
+    background: url('../images/univers_betes/fond.png');
+    background-size: cover;
+    /*background-position: center;*/
+}
+
+.characters
+{
+    display: flex;
+    flex-direction: row;
+    /*background: rgba(62,30,83, 0.2);*/
+}
