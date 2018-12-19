@@ -1,4 +1,5 @@
 const $pages = document.querySelector('.js-pages')
+const $icons = document.querySelectorAll('.js-icon')
 
 page = new Pages($pages)
 
@@ -29,4 +30,9 @@ for(const $instructionsOpen of $instructionsOpens)
             $instructions.classList.toggle('open')
         }
     )
+}
+
+for(const $icon of $icons)
+{
+    const icon = new Icon($icon)
 }

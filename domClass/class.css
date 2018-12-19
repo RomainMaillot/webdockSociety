@@ -179,7 +179,7 @@
     z-index: 1;
 }
 
-.menu__card.incoming::after
+.menu__card.incoming .menu__card__content::before
 {
     content: "";
     position: absolute;
@@ -187,7 +187,6 @@
     width: 100%;
     height: 100%;
     background: #00000080;
-    z-index: 2;
 }
 
 .menu__card.active .menu__card__content .card__content__inner
@@ -301,20 +300,20 @@
 
 .pages--container .page.is-before
 {
-    transform: translateX(-100%)
+    transform: translateX(-100%);
 }
 .pages--container .page.is-before .content
 {
-    transform: translateX(90%)
+    transform: translateX(100%);
 }
 
 .pages--container .page.is-after
 {
-    transform: translateX(100%)
+    transform: translateX(100%);
 }
 .pages--container .page.is-after .content
 {
-    transform: translateX(-90%)
+    transform: translateX(-100%);
 }
 
 /* Siblings */
@@ -329,6 +328,7 @@
     outline: none;
     cursor: pointer;
     background: none;
+    z-index: 1;
 }
 
 .pages--container .sibling.previous
@@ -373,4 +373,486 @@
 .pages--container .sibling.next::after
 {
     transform: translateX(-30px) rotate(45deg)
+}
+
+/* Icons */
+
+.icon
+{
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    z-index: 11;
+    background: #412057;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.icon.history
+{
+    width: 40px;
+    height: auto;
+    background: none;
+    border-radius: 0;
+    opacity: 0.5;
+}
+
+.icon.history:hover
+{
+    opacity: 1;
+    background: none;
+}
+
+.icon .iconImage
+{
+    width: 80px;
+    height: 80px;
+}
+
+h2.icon__inner
+{
+    font-size: 3rem;
+    margin: auto;
+}
+
+.icon:hover
+{
+    background: #ffffff;
+    color: #412057;
+    border-color: #412057;
+}
+
+.document__container
+{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #25182680;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+.document__container.info,
+.document__container.video,
+.document__container.audio
+{
+    background: none;
+}
+
+.document__container.open
+{
+    opacity: 1;
+    z-index: 20;
+}
+
+.document__container .document
+{
+    position: absolute;
+    height: 90%;
+    width: 30%;
+    margin: auto;
+    right: 10%;
+    align-self: center;
+    background: #25182690;
+    transform: translateX(100%);
+    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+}
+
+.document__container.info .document,
+.document__container.video .document,
+.document__container.audio .document
+{
+    width: 80%;
+}
+
+.document__container.audio .document
+{
+    height: 15%;
+    bottom: 5%;
+    background: none;
+}
+
+.document__container.more
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.document__container.more .document
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+    width: 80%;
+    background: none;
+}
+
+.picture__container
+{
+    align-self: center;
+    height: 50%;
+    width: 30%;
+}
+
+.document__container .btn--close
+{
+    right: 5%;
+}
+
+.document__container.open .document
+{
+    transform: translateX(0);
+}
+
+.document__container .document .text__container
+{
+    height: 90%;
+    width: 85%;
+    border: 2px solid white;
+    align-self: center;
+}
+
+.document__container .document .video__container
+{
+    height: 80%;
+    width: 85%;
+    margin-top: 2%;
+    border: 2px solid white;
+    align-self: flex-start;
+}
+
+.document__container.info .document .text__container
+{
+    width: 95%;
+    height: 95%;
+}
+
+.text__container .icon__title
+{
+    font-size: 2rem;
+    margin: 10% auto;
+    width: 80%;
+    border-bottom: 1px solid white;
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+.document__container.info .text__container .icon__title
+{
+    margin: 5% auto;
+    width: 40%;
+    padding-bottom: 2%;
+}
+
+.document__container.video .icon__title
+{
+    width: 85%;
+    position: absolute;
+    bottom: 0;
+}
+
+.document__container.audio .icon__title
+{
+    width: 85%;
+    font-size: 1rem;
+    position: absolute;
+    left: 5%;
+}
+
+.document__container.audio .icon__subtitle
+{
+    width: 85%;
+    font-size: 1rem;
+    position: absolute;
+    left: 5%;
+    top: 15%;
+}
+
+.text__container .icon__text
+{
+    font-size: 1rem;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.document__container.info .text__container .icon__text
+{
+    width: 60%;
+}
+
+/* Video */
+
+.document__container.video .button__container
+{
+    width: 85%;
+    height: 5%;
+    position: absolute;
+    bottom: 9%;
+}
+
+.button__container .play,
+.button__container .pause
+{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+    will-change: opacity;
+    z-index: -1;
+}
+
+.button__container .play.appear,
+.button__container .pause.appear
+{
+    opacity: 1;
+    z-index: 0;
+}
+
+.button__container .seek
+{
+    width: 70%;
+    height: 30%;
+    background: #FFFFFF80;
+    position: absolute;
+    left: 5%;
+    top: 35%;
+    overflow-x: hidden;
+}
+
+.button__container .seek .fill
+{
+    width: 100%;
+    height: 104%;
+    background: #3E1E53;
+    transform-origin: 0 0;
+    transform: translateX(-100%);
+    will-change: transform;
+}
+
+.button__container .fill .circle
+{
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    right: -4px;
+    top: 0px;
+}
+
+.button__container .time
+{
+    position: absolute;
+    left: 77%;
+    top: 30%;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.button__container .volume
+{
+    position: absolute;
+    left: 80%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+
+.button__container .volume img
+{
+    height: 100%;
+}
+
+.button__container .volume::after
+{
+    content: '';
+    width: 22px;
+    height: 2px;
+    position: absolute;
+    background: white;
+    right: 25%;
+    bottom: 45%;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+
+.button__container.mute .volume::after
+{
+    opacity: 1;
+}
+
+.button__container .volume:hover
+{
+    opacity: 1;
+}
+
+.button__container .fullScreen
+{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+
+.button__container .fullScreen:hover
+{
+    opacity: 1;
+}
+
+/* Audio */
+
+.button__container.audio .play,
+.button__container.audio .pause
+{
+    position: absolute;
+    top: 15%;
+    left: 0;
+    height: 30%;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+    will-change: opacity;
+    z-index: -1;
+}
+
+.button__container.audio .play.appear,
+.button__container.audio .pause.appear
+{
+    opacity: 1;
+    z-index: 0;
+}
+
+.button__container.audio .seek
+{
+    width: 85%;
+    height: 10%;
+    background: #FFFFFF80;
+    position: absolute;
+    top: 65%;
+    overflow-x: hidden;
+}
+
+.button__container.audio .seek .fill
+{
+    width: 100%;
+    height: 100%;
+    background: #3E1E53;
+    transform-origin: 0 0;
+    transform: translateX(-100%);
+    will-change: transform;
+}
+
+.button__container.audio .volume
+{
+    position: absolute;
+    left: 85%;
+    height: 40%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+
+.button__container.audio .volume img
+{
+    height: 100%;
+}
+
+.button__container.audio .volume:hover
+{
+    opacity: 1;
+}
+
+/* More Picture */
+
+.picture__container .picture
+{
+    height: 60%;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+
+.picture__container .picture::after
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #FFFFFF;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+
+.picture__container .picture:hover::after,
+.picture__container.appear .picture::after
+{
+    opacity: 0;
+}
+
+.picture__text__container
+{
+    height: 40%;
+    background: #25182690;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+    will-change: transform;
+    visibility: hidden;
+}
+
+.picture__text__container.appear
+{
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.picture__title
+{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 5% 0;
+    position: relative;
+}
+
+.picture__title::after
+{
+    content: '';
+    width: 80%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    right: 9%;
+    background: white;
+}
+
+.picture__text
+{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 5%;
+    font-size: 0.8rem;
 }
