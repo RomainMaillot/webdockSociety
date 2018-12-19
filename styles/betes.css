@@ -591,6 +591,13 @@ span.strong
     left: 70%;
 }
 
+.page.page4 .characters .dancers .icon1 .icon
+{
+    position: absolute;
+    top: 20%;
+    left: 80%;
+}
+
 .page.page5
 {
     background: url('../images/univers_betes/fond.png');
@@ -662,6 +669,13 @@ span.strong
     position: absolute;
     top: 30%;
     left: 80%;
+}
+
+.page.page5 .characters .food .icon3 .icon
+{
+    position: absolute;
+    top: 30%;
+    left: 85%;
 }
 
 /* How to use */
