@@ -15,7 +15,6 @@ body
 {
     height: 100vh;
     width: 100vw;
-    background: #000000;
 }
 
 .icon
@@ -27,4 +26,50 @@ body
 span.strong
 {
     font-weight: bold;
+}
+
+.page
+{
+    background: url('../images/background_page_roms.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.page__main
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+.page .content
+{
+    background: #3E1E5380; 
+}
+
+.page__header
+{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    width: 100%;
+}
+
+.page__header .page__title
+{
+    margin: 0 auto;
+    font-size: 3rem;
+    align-self: center;
+    text-transform: uppercase;
+    font-family: "Bodoni", sans-serif;
+}
+
+.document__container
+{
+    position: fixed;
+    top: 0;
 }
