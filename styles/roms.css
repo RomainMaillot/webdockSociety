@@ -894,3 +894,26 @@ span.strong
     font-family: "Bodoni-Book";
     src: url('../fonts/BodoniStd-Book.otf');
 }
+
+.picture__container .picture
+{
+    height: 60%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+}
+
+.text__container .icon__title
+{
+    font-family: "Bodoni", sans-serif;
+}
+
+.text__container .icon__text
+{
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    line-height: 22px;
+}
