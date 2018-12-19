@@ -7,7 +7,7 @@ page = new Pages($pages)
 const $buttons = document.querySelectorAll('.js-button')
 const $menu = document.querySelector('.js-menu')
 const $menuButton = document.querySelector('.btn-menu')
-const $instructionsOpen = document.querySelector('.instructions--open')
+const $instructionsOpens = document.querySelectorAll('.instructions--open')
 const $instructions = document.querySelector('.js-instructions')
 const $closeButton = document.querySelectorAll('.js-button-close')
 
@@ -20,10 +20,13 @@ for(const $button of $closeButton)
     const button = new ButtonClose($button,$instructions)
 }
 
-$instructionsOpen.addEventListener(
-    'click',
-    () =>
-    {
-        $instructions.classList.toggle('open')
-    }
-)
+for(const $instructionsOpen of $instructionsOpens)
+{
+    $instructionsOpen.addEventListener(
+        'click',
+        () =>
+        {
+            $instructions.classList.toggle('open')
+        }
+    )
+}
