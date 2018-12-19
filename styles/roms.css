@@ -28,6 +28,13 @@ body
 *   Roms universe
  */
 
+.characters
+{
+    display: flex;
+    flex-direction: row;
+    /*background: rgba(62,30,83, 0.2);*/
+}
+
 .page.page4
 {
     background: url('../images/univers_roms/fondseul.jpg');
@@ -38,15 +45,31 @@ body
 .page.page4 .characters .cheval img
 {
     position: relative;
-    top: -30%;
+    margin-top: -16%;
+    width: 55vw;
+}
+
+.page.page4 .characters .dancer img
+{
+    position: relative;
+    left: 13%;
+    width: 23vw;
+    bottom: -5%;
 }
 
 .page.page4 .characters .guitar-player img
 {
     position: relative;
-    /*width: 45%;*/
-    /*bottom: -98px;*/
-    left: 13%;
+    width: 55vw;
+    bottom: -20%;
+    left: -110%;
+}
+
+.page.page4 .characters .black-smith img
+{
+    position: relative;
+    bottom: -23%;
+    left: -155%;
 }
 
 .page .content
