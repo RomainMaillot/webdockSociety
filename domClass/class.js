@@ -397,6 +397,8 @@ class Icon
 
             this.iconImage = document.createElement('img')
             this.iconImage.src = 'images/film-icon.png'
+            this.iconImage.dataSrc = 'images/film-icon.png'
+            this.iconImage.dataHover = 'images/film-violet.png'
             this.iconImage.classList.add('iconImage')
             this.icon.appendChild(this.iconImage)
 
@@ -438,6 +440,8 @@ class Icon
 
             this.iconImage = document.createElement('img')
             this.iconImage.src = 'images/audio-icon.png'
+            this.iconImage.dataSrc = 'images/audio-icon.png'
+            this.iconImage.dataHover = 'images/audio-violet.png'
             this.iconImage.classList.add('iconImage')
             this.icon.appendChild(this.iconImage)
 
@@ -516,20 +520,20 @@ class Icon
                 this.iconActionContainer.classList.add('open')
             }
         )
-        if(this.$container.dataset.media == 'audio')
+        if(this.$container.dataset.media == 'audio' || this.$container.dataset.media == 'video')
         {
             this.icon.addEventListener(
                 'mouseenter',
                 () =>
                 {
-                    this.iconImage.src = 'images/audio-violet.png'
+                    this.iconImage.src = this.iconImage.dataHover
                 }
             )
             this.icon.addEventListener(
                 'mouseleave',
                 () =>
                 {
-                    this.iconImage.src = 'images/audio-icon.png'
+                    this.iconImage.src = this.iconImage.dataSrc
                 }
             )
         }
