@@ -61,7 +61,6 @@ $aboutOpen.addEventListener(
     'click',
     () =>
     {
-        console.log($about)
         $about.classList.toggle('open')
     }
 )

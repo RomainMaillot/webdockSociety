@@ -179,7 +179,7 @@
     z-index: 1;
 }
 
-.menu__card.incoming::after
+.menu__card.incoming .menu__card__content::before
 {
     content: "";
     position: absolute;
@@ -187,7 +187,6 @@
     width: 100%;
     height: 100%;
     background: #00000080;
-    z-index: 2;
 }
 
 .menu__card.active .menu__card__content .card__content__inner
@@ -270,4 +269,186 @@
 .btn--close::after 
 {
     transform: rotate(-45deg);
+}
+
+/* Pages */
+.pages--container
+{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.pages--container .pages,
+.pages--container .page,
+.pages--container .content
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pages--container .page,
+.pages--container .content
+{
+    transition: transform 0.6s cubic-bezier(0.075, 0.25, 0.165, 1);
+    will-change: transform;
+}
+
+.pages--container .page.is-before
+{
+    transform: translateX(-100%);
+}
+.pages--container .page.is-before .content
+{
+    transform: translateX(100%);
+}
+
+.pages--container .page.is-after
+{
+    transform: translateX(100%);
+}
+.pages--container .page.is-after .content
+{
+    transform: translateX(-100%);
+}
+
+/* Siblings */
+
+.pages--container .sibling
+{
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+    z-index: 1;
+}
+
+.pages--container .sibling.previous
+{
+    left: 0;
+}
+
+.pages--container .sibling.firstLast
+{
+    display: none;
+}
+
+.pages--container .sibling.next
+{
+    right: 0;
+}
+
+.pages--container .sibling::after
+{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-top: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    border-radius: 5px;
+    opacity: 0.50;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+
+.pages--container .sibling:hover::after
+{
+    opacity: 1;
+}
+
+.pages--container .sibling.previous::after
+{
+    transform: translateX(30px) rotate(-135deg)
+}
+
+.pages--container .sibling.next::after
+{
+    transform: translateX(-30px) rotate(45deg)
+}
+
+/* Icons */
+
+.icon
+{
+    width: 40px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    will-change: opacity;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.icon:hover
+{
+    opacity: 1;
+}
+
+.document__container
+{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #25182680;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+.document__container.open
+{
+    opacity: 1;
+}
+
+.document__container .document
+{
+    position: absolute;
+    height: 90%;
+    width: 30%;
+    margin: auto;
+    right: 5%;
+    align-self: center;
+    background: #251826;
+    transform: translateX(100%);
+    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+}
+
+.document__container.open .document
+{
+    transform: translateX(0);
+}
+
+.document__container .document .text__container
+{
+    height: 90%;
+    width: 85%;
+    border: 2px solid white;
+    align-self: center;
+}
+
+.text__container .icon__title
+{
+    font-size: 2rem;
+    margin: 10% auto;
+    width: 80%;
+    border-bottom: 1px solid white;
+    padding-bottom: 5%;
+}
+
+.text__container .icon__text
+{
+    font-size: 1rem;
+    margin: 0 auto;
+    width: 80%;
 }

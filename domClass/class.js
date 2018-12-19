@@ -159,3 +159,196 @@ class ButtonClose
         )
     }
 }
+/* Creation of the class Pages */
+class Pages
+{
+    constructor($container)
+    {
+        this.$container = $container
+        
+        this.setPages()
+        this.setSiblings()
+
+        this.gotTo(0)
+    }
+
+    setPages()
+    {
+        this.pages = {}
+        this.pages.index = 0
+        this.pages.$items = this.$container.querySelectorAll('.page')
+    }
+
+    setSiblings()
+    {
+        this.siblings = {}
+        this.siblings.active = !!this.$container.dataset.siblings
+        
+        if(this.siblings.active)
+        {
+            if(!this.siblings.active)
+            {
+                return
+            }
+
+            //create DOM
+            this.siblings.$previous = document.createElement('button')
+            this.siblings.$previous.classList.add('sibling', 'previous', 'firstLast')
+            this.$container.appendChild(this.siblings.$previous)
+            
+            this.siblings.$next = document.createElement('button')
+            this.siblings.$next.classList.add('sibling', 'next')
+            this.$container.appendChild(this.siblings.$next)
+
+            // Listen click events
+            this.siblings.$previous.addEventListener(
+                'click', 
+                () =>
+                {
+                    this.previous()
+                }
+            )
+
+            this.siblings.$next.addEventListener(
+                'click',
+                () =>
+                {
+                    this.next()
+                }
+            )
+        }
+    }
+
+    previous()
+    {
+        let index = this.pages.index - 1
+
+        if(index < 0)
+        {
+            index = this.pages.$items.length - 1
+        }
+        if(index == 0)
+        {
+            this.siblings.$previous.classList.add('firstLast')
+        }
+
+        this.gotTo(index)
+    }
+
+    next()
+    {
+        let index = this.pages.index + 1
+
+        if(index > this.pages.$items.length - 1)
+        {
+            index = 0
+        }
+        if(index == this.pages.$items.length - 1)
+        {
+            this.siblings.$next.classList.add('firstLast')
+        }
+
+        this.gotTo(index)
+    }
+
+    gotTo(_index)
+    {
+        // Update pages classes
+        for(let i = 0; i < this.pages.$items.length; i++)
+        {
+            const $page = this.pages.$items[i]
+
+            if(i < _index)
+            {
+                $page.classList.add('is-before')
+                $page.classList.remove('is-current','is-after')
+            }
+            else if(i === _index)
+            {
+                $page.classList.add('is-current')
+                $page.classList.remove('is-before','is-after')
+            }
+            else
+            {
+                $page.classList.add('is-after')
+                $page.classList.remove('is-current','is-before')
+            }
+        }
+
+        // Save index
+        this.pages.index = _index
+
+        if(this.pages.index > 0 && this.pages.index < this.pages.$items.length - 1)
+        {
+            this.siblings.$next.classList.remove('firstLast')
+            this.siblings.$previous.classList.remove('firstLast')
+        }
+    }
+}
+// Class icon
+class Icon
+{
+    constructor($container)
+    {
+        this.$container = $container
+
+        this.createIcon()
+        this.iconAction()
+    }
+
+    createIcon()
+    {
+        if(this.$container.dataset.media = history)
+        {
+            // Create Dom
+            this.documentText = this.$container.querySelector('.icon__text')
+            this.$container.removeChild(this.documentText)
+
+            this.icon = document.createElement('img')
+            this.icon.src = 'images/fichier.png'
+            this.icon.classList.add('icon')
+            this.$container.appendChild(this.icon)
+
+            // Create Dom action
+            this.iconActionContainer = document.createElement('div')
+            this.iconActionContainer.classList.add('document__container')
+            this.$container.appendChild(this.iconActionContainer)
+
+            this.iconDocument = document.createElement('div')
+            this.iconDocument.classList.add('document')
+            this.iconActionContainer.appendChild(this.iconDocument)
+
+            // Create crossClose
+            this.iconDocumentClose = document.createElement('div')
+            this.iconDocumentClose.classList.add('btn--close', 'js-button-close')
+            this.iconActionContainer.appendChild(this.iconDocumentClose)
+            new ButtonClose(this.iconDocumentClose,this.iconActionContainer)
+
+            // Create text container
+            this.textContainer = document.createElement('div')
+            this.textContainer.classList.add('text__container')
+            this.iconDocument.appendChild(this.textContainer)
+
+            // Create inside text
+            this.documentTitle = document.createElement('h2')
+            this.documentTitle.classList.add('icon__title')
+            this.documentTitle.textContent = `${this.$container.dataset.title}`
+            this.textContainer.appendChild(this.documentTitle)
+
+            // Create inside paragraph
+            
+            this.textContainer.appendChild(this.documentText)
+        }
+    }
+
+    iconAction()
+    {
+        this.icon.addEventListener(
+            'click',
+            () =>
+            {
+                this.iconActionContainer.classList.add('open')
+            }
+        )
+    }
+}
