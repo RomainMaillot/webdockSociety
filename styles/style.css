@@ -67,7 +67,7 @@ body
 .preloader .top--preloader .preloader__sentence
 {
     font-size: 1.2rem;
-    font-family: "Bodoni Roman", sans-serif;
+    font-family: "Bodoni-Book", sans-serif;
 }
 
 .preloader .bottom--preloader
@@ -96,7 +96,7 @@ body
 
 .preloader .bottom--preloader .preloader__icons .icon__logo
 {
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: default;
     font-family: 'Lato', sans-serif;
 }
@@ -111,6 +111,7 @@ body
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-left: 2.3rem;
 }
 
 .preloader .bottom--preloader .preloader__text p
@@ -142,7 +143,7 @@ body
 
 span.strong
 {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /**

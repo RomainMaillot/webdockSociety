@@ -21,7 +21,7 @@ body
 
 span.strong
 {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /* HEADER */
@@ -469,6 +469,7 @@ span.strong
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-left: 2.3rem;
 }
 
 .preloader .bottom--preloader .preloader__text p
