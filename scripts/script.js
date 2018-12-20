@@ -8,7 +8,7 @@ const $percent = document.querySelector('.preloader__percentage')
 
 window.addEventListener('load', () => {
 
-        let $counter = 0
+        let $counter = 10
 
         const frame = () => {
             if ($counter === 100) {
