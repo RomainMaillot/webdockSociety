@@ -1,4 +1,3 @@
-
 /*
 *   Preloader screen
  */
@@ -16,7 +15,8 @@ window.addEventListener('load', () => {
                 $preloader.style.display = 'none'
                 $container.style.transform = `translateY(${0}`
                 clearInterval($percentageLoader)
-                const sentencesDisplay = setInterval(display, 4000)
+                display()
+                $counter += 1
             }
             else {
                 $counter += 1
@@ -69,22 +69,27 @@ $aboutOpen.addEventListener(
 *   Ghost text
  */
 
-let $sentences = []
-$sentences.push(document.querySelector('.show'))
-$sentences.push(document.querySelector('.hideSecond'))
-$sentences.push(document.querySelector('.hideThird'))
-
-$sentences[1].style.display='none'
-$sentences[2].style.display='none'
-
-let i = 1;
-
 const display = () =>
 {
-    if (i < 3)
-    {
-        $sentences[i - 1].style.display = 'none'
-        $sentences[i].style.display = 'block'
-        i++
-    }
+    let $sentences = []
+    $sentences.push(document.querySelector('.show'))
+    $sentences.push(document.querySelector('.hideSecond'))
+    $sentences.push(document.querySelector('.hideThird'))
+
+    $sentences[1].style.display='none'
+    $sentences[2].style.display='none'
+
+    let i = 1
+    setInterval(
+        () =>
+        {
+            if(i<3)
+            {
+                console.log(i)
+                $sentences[i - 1].style.display = 'none'
+                $sentences[i].style.display = 'block'
+                i++
+            }
+        },4000
+    )
 }
