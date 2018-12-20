@@ -533,14 +533,20 @@ class Icon
                     if(this.$container.dataset.media == 'audio')
                     {
                         this.audioContainer.pause()
-                        this.iconDocument.querySelector('.play').classList.toggle('appear')
-                        this.iconDocument.querySelector('.pause').classList.toggle('appear')
+                        if(this.iconDocument.querySelector('.pause').classList.contains('appear'))
+                        {
+                            this.iconDocument.querySelector('.play').classList.toggle('appear')
+                            this.iconDocument.querySelector('.pause').classList.toggle('appear')
+                        }
                     }
                     if(this.$container.dataset.media == 'video')
                     {
                         this.videoContainer.pause()
-                        this.iconDocument.querySelector('.play').classList.toggle('appear')
-                        this.iconDocument.querySelector('.pause').classList.toggle('appear')
+                        if(this.iconDocument.querySelector('.pause').classList.contains('appear'))
+                        {
+                            this.iconDocument.querySelector('.play').classList.toggle('appear')
+                            this.iconDocument.querySelector('.pause').classList.toggle('appear')
+                        }
                     }
                 }
             }
