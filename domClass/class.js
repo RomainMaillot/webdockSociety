@@ -521,13 +521,18 @@ class Icon
             }
         )
 
-        // this.iconActionContainer.addEventListener(
-        //     'click',
-        //     () =>
-        //     {
-        //         this.iconActionContainer.classList.remove('open')
-        //     }
-        // )
+        this.iconActionContainer.addEventListener(
+            'click',
+            (_event) =>
+            {
+                this.iconDocumentBounding = this.iconDocument.getBoundingClientRect()
+
+                if(_event.clientX > this.iconDocumentBounding.right || _event.clientX < this.iconDocumentBounding.left || _event.clientY > this.iconDocumentBounding.bottom || _event.clientY < this.iconDocumentBounding.top)
+                {
+                    this.iconActionContainer.classList.remove('open')
+                }
+            }
+        )
 
         if(this.$container.dataset.media == 'audio' || this.$container.dataset.media == 'video')
         {
