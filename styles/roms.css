@@ -178,6 +178,18 @@ span.strong
     bottom: 20%;
 }
 
+.page.page5 .characters .black-smith::after,
+.page.page6 .characters .mother::after
+{
+    content: '';
+    width: 100vw;
+    height: 80vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: rgba(62,30,83, 0.5);
+}
+
 .page.page5 .characters .black-smith .icon1 .icon
 {
     top: 30%;
@@ -265,6 +277,18 @@ span.strong
     flex-direction: row;
     margin: 20px;
     width: 100%;
+}
+
+.page__header__panorama::before
+{
+    content: '';
+    width: 100vw;
+    height: 20vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(62,30,83, 0.5);
+    z-index: -1;
 }
 
 .page__header .page__title

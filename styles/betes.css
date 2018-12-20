@@ -490,6 +490,18 @@ span.strong
     width: 100%;
 }
 
+.page__header__panorama::before
+{
+    content: '';
+    width: 100vw;
+    height: 20vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(62,30,83, 0.5);
+    z-index: -1;
+}
+
 .page__header__panorama a img {
     height: 100px
 }
@@ -589,6 +601,18 @@ span.strong
     bottom: 16%;
     width: 23vw;
     left: 70%;
+}
+
+.page.page4 .characters .dancers::after,
+.page.page5 .characters .food::after
+{
+    content: '';
+    width: 100vw;
+    height: 80vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: rgba(62,30,83, 0.5);
 }
 
 .page.page4 .characters .dancers .icon1 .icon
