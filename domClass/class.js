@@ -520,6 +520,15 @@ class Icon
                 this.iconActionContainer.classList.add('open')
             }
         )
+
+        // this.iconActionContainer.addEventListener(
+        //     'click',
+        //     () =>
+        //     {
+        //         this.iconActionContainer.classList.remove('open')
+        //     }
+        // )
+
         if(this.$container.dataset.media == 'audio' || this.$container.dataset.media == 'video')
         {
             this.icon.addEventListener(

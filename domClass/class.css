@@ -434,7 +434,8 @@ h2.icon__inner
     background: #25182680;
     display: flex;
     opacity: 0;
-    transition: opacity 0.3s;
+    transform: translateY(10%);
+    transition: transform 0.3s ease-in-out 0.3s, opacity 0.3s;
     z-index: 10;
 }
 
@@ -447,8 +448,10 @@ h2.icon__inner
 
 .document__container.open
 {
+    transform: translateY(0);
     opacity: 1;
     z-index: 20;
+    transition: opacity 0.3s;
 }
 
 .document__container .document
@@ -488,7 +491,6 @@ h2.icon__inner
 
 .document__container.more
 {
-    display: flex;
     flex-direction: row;
     justify-content: space-around;
 }

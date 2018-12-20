@@ -94,7 +94,7 @@ body
     align-items: center;
 }
 
-.preloader .bottom--preloader .preloader__icons .icon
+.preloader .bottom--preloader .preloader__icons .icon__logo
 {
     font-size: 3rem;
     cursor: default;
@@ -384,13 +384,25 @@ nav ul.topnav li a img
     margin-left: 25px;
 }
 
-.footer-logos__img__twitter
+.footer-logos__img__twitter,
+.footer-logos__img__insta
+{
+    opacity: 0.5;
+}
+
+.footer-logos__img__twitter:hover,
+.footer-logos__img__insta:hover
+{
+    opacity: 1;
+}
+
+.footer-logos__img__twitter img
 {
     width: 25px;
     height: 25px;
 }
 
-.footer-logos__img__insta
+.footer-logos__img__insta img
 {
     width: 25px;
     height: 25px;
