@@ -456,7 +456,7 @@ class Icon
 
             // Create crossClose
             this.iconDocumentClose = document.createElement('div')
-            this.iconDocumentClose.classList.add('btn--close', 'js-button-close')
+            this.iconDocumentClose.classList.add('btn--close', 'js-button-close', 'btn--audioClose')
             this.iconActionContainer.appendChild(this.iconDocumentClose)
             new ButtonClose(this.iconDocumentClose,this.iconActionContainer)
 
@@ -469,7 +469,7 @@ class Icon
             // Create text container
             this.audioContainer = document.createElement('audio')
             this.audioContainer.src = this.$container.dataset.src
-            this.audioContainer.classList.add('video__container', 'js-videoPlayer')
+            this.audioContainer.classList.add('audio__container', 'js-audioPlayer')
             this.iconDocument.appendChild(this.audioContainer)
             playersAudio.push(new MusicPlayer(this.iconDocument,this.audioContainer))
 
@@ -530,9 +530,34 @@ class Icon
                 if(_event.clientX > this.iconDocumentBounding.right || _event.clientX < this.iconDocumentBounding.left || _event.clientY > this.iconDocumentBounding.bottom || _event.clientY < this.iconDocumentBounding.top)
                 {
                     this.iconActionContainer.classList.remove('open')
+                    if(this.$container.dataset.media == 'audio')
+                    {
+                        this.audioContainer.pause()
+                        this.iconDocument.querySelector('.play').classList.toggle('appear')
+                        this.iconDocument.querySelector('.pause').classList.toggle('appear')
+                    }
+                    if(this.$container.dataset.media == 'video')
+                    {
+                        this.videoContainer.pause()
+                        this.iconDocument.querySelector('.play').classList.toggle('appear')
+                        this.iconDocument.querySelector('.pause').classList.toggle('appear')
+                    }
                 }
             }
         )
+
+        if(this.$container.dataset.media == 'audio')
+        {
+            this.iconActionContainer.querySelector('.btn--audioClose').addEventListener(
+                'click',
+                () =>
+                {
+                    this.audioContainer.pause()
+                    this.iconDocument.querySelector('.play').classList.toggle('appear')
+                    this.iconDocument.querySelector('.pause').classList.toggle('appear')
+                }
+            )
+        }
 
         if(this.$container.dataset.media == 'audio' || this.$container.dataset.media == 'video')
         {
